@@ -1,0 +1,53 @@
+.timer {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  margin-bottom: 12px;
+  &__wrapper {
+    display: block;
+    text-decoration: none;
+  }
+  &__label {
+    display: block;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  &__value {
+    display: block;
+    color: var(--color-dark);
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+    position: relative;
+  }
+  &__item {
+    text-align: center;
+    width: 66px;
+    margin: 0 4px;
+    padding-right: 0;
+    padding: 4px 8px 4px 8px;
+    display: block;
+    position: relative;
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+    &::before {
+      content: ":";
+      position: absolute;
+      left: -10px;
+      color: var(--color-dark);
+      font-size: 40px;
+      line-height: 1.25;
+      font-weight: 700;
+      bottom: 5px;
+    }
+  }
+}
+#timer-seconds::after {
+  display: none;
+}

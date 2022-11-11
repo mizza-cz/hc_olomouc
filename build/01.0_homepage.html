@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="cs-CZ">
+
+<head>
+	<meta charset="utf-8" />
+	<title>01.0_homepage - HC OLOMOUC</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap" rel="stylesheet" />
+	<link rel="preload" href="css/styles.css" as="style" />
+	<link rel="stylesheet" media="screen, handheld" href="css/styles.css?v=20221111190" />
+	<link rel="stylesheet" media="print" href="css/prints.css?v=20221111190" />
+	<link rel="preload" href="https://code.jquery.com/jquery-3.6.0.min.js" as="script" crossorigin />
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" as="script" crossorigin />
+	<link rel="preload" href="js/scripts.js" as="script" />
+	<script>
+		(function() {
+			"use strict";
+			/**
+			 * Define global Util object if it doesn't exist
+			 */
+			if ("object" !== typeof window.Timer) {
+				window.Timer = {};
+			}
+			/**
+			 * Namspace string
+			 */
+			Timer.ns = "JavaScript Timer";
+			Timer.getTimeRemaining = function(endtimeRaw) {
+				// Some browsers need a "T" in there...
+				var endtime = new Date(endtimeRaw.replace(/\s/, "T"));
+				var t = Date.parse(endtime) - Date.parse(new Date());
+				var seconds = Math.floor((t / 1000) % 60);
+				var minutes = Math.floor((t / 1000 / 60) % 60);
+				var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+				var days = Math.floor(t / (1000 * 60 * 60 * 24));
+				// Build out the JSON object
+				return {
+					total: t,
+					days: days,
+					hours: hours,
+					minutes: minutes,
+					seconds: seconds,
+				};
+			};
+			Timer.updateClock = function(endtime) {
+				var t = this.getTimeRemaining(endtime);
+				var days = document.getElementById("timer-days");
+				var hours = document.getElementById("timer-hours");
+				var minutes = document.getElementById("timer-minutes");
+				var seconds = document.getElementById("timer-seconds");
+				var den = document.querySelector(".timer__label-days");
+				days.querySelector(".timer__value").innerHTML = ("0" + t.days).slice(
+					-2
+				);
+				hours.querySelector(".timer__value").innerHTML = (
+					"0" + t.hours
+				).slice(-2);
+				minutes.querySelector(".timer__value").innerHTML = (
+					"0" + t.minutes
+				).slice(-2);
+				// Adds a leading 0 to maintain spacing
+				seconds.querySelector(".timer__value").innerHTML = (
+					"0" + t.seconds
+				).slice(-2);
+				// sklonovani
+				den.innerHTML = t.days >= 5 ? "dní" : t.days == 1 ? "den" : "dni";
+				// If the timer is at zero
+				if (t.total <= 0) {
+					// Stop the timer
+					clearInterval(timeinterval);
+					// Zero out the timer
+					days.querySelector(".timer__value").innerHTML = 0;
+					hours.querySelector(".timer__value").innerHTML = 0;
+					minutes.querySelector(".timer__value").innerHTML = 0;
+					seconds.querySelector(".timer__value").innerHTML = 0;
+				} // if 0
+			};
+			Timer.start = function(obj) {
+				var timer = obj.timer;
+				var endtime = obj.endtime;
+				if (timer) {
+					// Run the function once to avoid a delayed start
+					this.updateClock(endtime);
+					// Set up the time interval to tick the clock down
+					var timeinterval = setInterval(function() {
+						Timer.updateClock(endtime);
+					}, 1000);
+				} // timer
+			};
+		})();
+		let countDown = document.getElementById("timer");
+		if (countDown) {
+			(function() {
+				Timer.start({
+					timer: document.getElementById("js-timer"),
+					endtime: document
+						.getElementById("js-timer")
+						.getAttribute("data-endtime"),
+				});
+			})();
+		}
+	</script>
+</head>
+
+<body>
+	<div class="base">
+		<header class="header">
+			<div class="header__top">
+				<div class="container">
+					<div class="header__top-inner">
+						<ul class="social">
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+									</svg> </a>
+							</li>
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 6.717 6.717 0 15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15zm21.859-2.86c0-.149-.004-.297-.01-.445a6.994 6.994 0 001.717-1.783 6.866 6.866 0 01-1.977.543 3.456 3.456 0 001.514-1.905 6.906 6.906 0 01-2.186.836 3.444 3.444 0 00-5.867 3.14 9.775 9.775 0 01-7.097-3.598 3.44 3.44 0 001.066 4.596 3.419 3.419 0 01-1.56-.43v.044a3.444 3.444 0 002.762 3.375 3.442 3.442 0 01-1.555.06 3.447 3.447 0 003.217 2.39 6.908 6.908 0 01-4.276 1.474 6.98 6.98 0 01-.822-.047 9.746 9.746 0 005.278 1.546c6.333 0 9.796-5.246 9.796-9.796z" fill="#fff" />
+									</svg> </a>
+							</li>
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path d="M17.871 15a2.871 2.871 0 11-5.742 0 2.871 2.871 0 015.742 0z" fill="#fff" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M21.714 9.92a2.669 2.669 0 00-.644-.99 2.666 2.666 0 00-.99-.644c-.304-.118-.76-.259-1.6-.297-.908-.041-1.18-.05-3.48-.05s-2.572.008-3.48.05c-.84.038-1.297.179-1.6.297a2.665 2.665 0 00-.99.644 2.67 2.67 0 00-.645.99c-.118.304-.258.76-.296 1.6-.042.908-.05 1.18-.05 3.48s.008 2.572.05 3.48c.038.84.178 1.297.296 1.6.138.374.358.713.645.99.277.287.616.507.99.645.303.118.76.258 1.6.296.908.042 1.18.05 3.48.05s2.572-.008 3.48-.05c.84-.038 1.296-.178 1.6-.296a2.852 2.852 0 001.634-1.635c.118-.303.259-.76.297-1.6.041-.908.05-1.18.05-3.48s-.009-2.572-.05-3.48c-.038-.84-.178-1.296-.297-1.6zM15 19.423a4.423 4.423 0 110-8.846 4.423 4.423 0 010 8.846zm3.564-9.02a1.034 1.034 0 102.067 0 1.034 1.034 0 00-2.067 0z" fill="#ffff" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 6.717 6.717 0 15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15zm23.161 5.642c.213-.548.359-1.174.4-2.09.042-.92.052-1.213.052-3.552 0-2.34-.01-2.633-.051-3.551-.042-.917-.188-1.543-.401-2.09a4.222 4.222 0 00-.993-1.526 4.222 4.222 0 00-1.526-.994c-.548-.213-1.174-.358-2.09-.4-.92-.042-1.213-.052-3.552-.052-2.34 0-2.633.01-3.551.052-.917.042-1.543.187-2.09.4a4.219 4.219 0 00-1.526.994 4.22 4.22 0 00-.994 1.525c-.213.548-.359 1.174-.4 2.09-.042.92-.052 1.213-.052 3.552 0 2.34.01 2.633.052 3.551.042.917.187 1.543.4 2.09a4.22 4.22 0 00.994 1.526c.43.439.95.778 1.525.994.548.213 1.174.358 2.09.4.92.042 1.213.052 3.552.052 2.34 0 2.633-.01 3.551-.052.917-.042 1.543-.187 2.09-.4a4.404 4.404 0 002.52-2.52z" fill="#fff" />
+									</svg> </a>
+							</li>
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.132 17.81l4.88-2.81-4.88-2.81v5.62z" fill="#fff" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 6.717 6.717 0 15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15zm23.987 4.524c.386-1.467.386-4.509.386-4.509s.015-3.057-.386-4.524a2.349 2.349 0 00-1.652-1.652C20.867 8.437 15 8.437 15 8.437s-5.868 0-7.335.387a2.396 2.396 0 00-1.652 1.667C5.627 11.958 5.627 15 5.627 15s0 3.057.386 4.509a2.35 2.35 0 001.652 1.652c1.483.401 7.335.401 7.335.401s5.868 0 7.334-.386a2.349 2.349 0 001.653-1.652z" fill="#fff" />
+									</svg> </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header__bottom">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg">
+						<a class="logo" href="">
+							<img src="images/content/logo.png" loading="lazy" alt="logo" />
+						</a>
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+							<ul class="navbar-nav navbar-nav--left">
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="klub" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Klub
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="klub">
+										<li><a class="dropdown-item" href="#">Historie</a></li>
+										<li><a class="dropdown-item" href="#">Úspěchy</a></li>
+										<li><a class="dropdown-item" href="#">Reprezentace</a></li>
+										<li><a class="dropdown-item" href="#">Kontakty</a></li>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="a-tym" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										A-tým
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="a-tym">
+										<li><a class="dropdown-item" href="#">Soupiska</a></li>
+										<li><a class="dropdown-item" href="#">Realizační tým</a></li>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="zapasy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Zápasy
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="zapasy">
+										<li><a class="dropdown-item" href="#">TELH</a></li>
+										<li><a class="dropdown-item" href="#">Přípravné zápasy</a></li>
+										<li><a class="dropdown-item" href="#">Tabulka TELH</a></li>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="mladez" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Mládež
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="mladez">
+										<li><a class="dropdown-item" href="#">Juniorky U19</a></li>
+										<li><a class="dropdown-item" href="#">Kadetky U17</a></li>
+										<li><a class="dropdown-item" href="#">U15</a></li>
+										<li><a class="dropdown-item" href="#">U14</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U13</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U12</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U11</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U10</a></li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Partneři </a>
+								</li>
+							</ul>
+							<div class="navbar-nav__logo">
+								<a class="header__logo" href="">
+									<img src="images/content/logo.png" loading="lazy" alt="logo" />
+								</a>
+							</div>
+							<ul class="navbar-nav navbar-nav--right">
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Vstupenky </a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Stadion </a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Ledová plocha </a>
+								</li>
+
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="fanzona" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Fanzóna
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="fanzona">
+										<li><a class="dropdown-item" href="#">Fanlub</a></li>
+										<li><a class="dropdown-item" href="#">Ptejte se</a></li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Archiv </a>
+								</li>
+							</ul>
+						</div>
+						<a class="navbar-search" href="#">
+							<img src="images/ico/search.svg" loading="lazy" alt="search" />
+						</a>
+						<button class="c-header__opener js-header__opener" type="button">
+							<span></span>
+						</button>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main" aria-label="Hlavní obsah">
+			<section class="c-topstory-section">
+				<div class="topstory">
+					<div id="topstory_image_1" class="topstory__image on">
+						<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" loading="lazy" alt="" />
+					</div>
+					<div id="topstory_image_2" class="topstory__image">
+						<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667400951&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/mladez_TOP.jpg" loading="lazy" alt="" />
+					</div>
+					<div id="topstory_image_3" class="topstory__image">
+						<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667340450&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/17_kladno_jergl.jpg" loading="lazy" alt="" />
+					</div>
+					<div id="topstory_image_4" class="topstory__image">
+						<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667332014&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/17_kladno.jpg" loading="lazy" alt="" />
+					</div>
+					<div id="topstory_image_5" class="topstory__image">
+						<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667166963&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/16_vitkovice_lev.jpg" loading="lazy" alt="" />
+					</div>
+					<div class="topstory__bcg"></div>
+					<div class="topstory__content" data-topstory_current="1">
+						<div class="h-100 container container--no-padding">
+							<div class="row h-100">
+								<div class="col-12 col-lg-7 col-xl-8">
+									<div class="h-100 row align-items-end">
+										<div class="col-12">
+											<div id="topstory_content_1" class="topstory_content on">
+												<ul class="topstory_content-tags">
+													<li>
+														<div class="tag">2. 9. 2021</div>
+													</li>
+													<li>
+														<div class="tag tag--primary">
+															Olomouc vs. Hradec Králové
+														</div>
+													</li>
+												</ul>
+												<h1>
+													<a href="clanek.asp?id=Znovu-za-CHL-Balicky-na-letecky-trip-do-Karlstadu-jsou-v-prodeji-11514">Generálka před extraligou! Na Hanou zavítá Hradec
+														Králové</a>
+												</h1>
+											</div>
+											<div id="topstory_content_2" class="topstory_content">
+												<ul class="topstory_content-tags">
+													<li>
+														<div class="tag">2. 9. 2021</div>
+													</li>
+													<li>
+														<div class="tag tag--primary">
+															Olomouc vs. Hradec Králové
+														</div>
+													</li>
+												</ul>
+												<h1>
+													<a href="clanek.asp?id=Juniori-vyzvou-lonske-medailisty-devitku-ceka-narocny-vikend-11528">Junioři vyzvou loňské medailisty, devítku čeká náročný
+														víkend</a>
+												</h1>
+											</div>
+											<div id="topstory_content_3" class="topstory_content">
+												<ul class="topstory_content-tags">
+													<li>
+														<div class="tag">2. 9. 2021</div>
+													</li>
+													<li>
+														<div class="tag tag--primary">
+															Olomouc vs. Hradec Králové
+														</div>
+													</li>
+												</ul>
+												<h1>
+													<a href="clanek.asp?id=Ulet-s-Rytiri-Hrozna-houpacka-vi-Ales-Jergl-V-obrat-veril-11527">Úlet s Rytíři? Hrozná houpačka, ví Aleš Jergl. V obrat
+														věřil</a>
+												</h1>
+											</div>
+											<div id="topstory_content_4" class="topstory_content">
+												<ul class="topstory_content-tags">
+													<li>
+														<div class="tag">2. 9. 2021</div>
+													</li>
+													<li>
+														<div class="tag tag--primary">
+															Olomouc vs. Hradec Králové
+														</div>
+													</li>
+												</ul>
+												<h1>
+													<a href="zapas.asp?id=Neskutecna-divocina-a-velky-obrat-Hradce-Kladno-porazil-8-7-8299">Neskutečná divočina a velký obrat Hradce! Kladno porazil
+														8:7</a>
+												</h1>
+											</div>
+											<div id="topstory_content_5" class="topstory_content">
+												<ul class="topstory_content-tags">
+													<li>
+														<div class="tag">2. 9. 2021</div>
+													</li>
+													<li>
+														<div class="tag tag--primary">
+															Olomouc vs. Hradec Králové
+														</div>
+													</li>
+												</ul>
+												<h1>
+													<a href="clanek.asp?id=Vsechno-je-to-o-golech-a-zakonceni-je-si-vedom-Jakub-Lev-11521">Všechno je to o gólech a zakončení, je si vědom Jakub
+														Lev</a>
+												</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="d-none d-lg-block col-lg-5 col-xl-4">
+									<div class="h-100 topstory__article-box">
+										<div class="topstory__article on" data-topstory="1">
+											<div class="topstory__article-row">
+												<div class="topstory__article-img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667166963&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/16_vitkovice_lev.jpg" loading="lazy" alt="" />
+												</div>
+												<h2>
+													<a title="" href="clanek.asp?id=Znovu-za-CHL-Balicky-na-letecky-trip-do-Karlstadu-jsou-v-prodeji-11514">Generálka před extraligou! Na Hanou zavítá Hradec
+														Králové</a>
+												</h2>
+											</div>
+										</div>
+										<div class="topstory__article" data-topstory="2">
+											<div class="topstory__article-row">
+												<div class="topstory__article-img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667166963&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/16_vitkovice_lev.jpg" loading="lazy" alt="" />
+												</div>
+												<h2>
+													<a title="" href="clanek.asp?id=Juniori-vyzvou-lonske-medailisty-devitku-ceka-narocny-vikend-11528">Program mládeže pro nadcházející dny</a>
+												</h2>
+											</div>
+										</div>
+										<div class="topstory__article" data-topstory="3">
+											<div class="topstory__article-row">
+												<div class="topstory__article-img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667166963&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/16_vitkovice_lev.jpg" loading="lazy" alt="" />
+												</div>
+												<h2>
+													<a title="" href="clanek.asp?id=Ulet-s-Rytiri-Hrozna-houpacka-vi-Ales-Jergl-V-obrat-veril-11527">VIDEO: Aleš Jergl o velkolepém obratu</a>
+												</h2>
+											</div>
+										</div>
+										<div class="topstory__article" data-topstory="4">
+											<div class="topstory__article-row">
+												<div class="topstory__article-img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667166963&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/16_vitkovice_lev.jpg" loading="lazy" alt="" />
+												</div>
+												<h2>
+													<a title="" href="zapas.asp?id=Neskutecna-divocina-a-velky-obrat-Hradce-Kladno-porazil-8-7-8299">Vyrovnaný zápas se rozsekl 21 sekund před koncem.
+														Vítězství braly Vítkovice</a>
+												</h2>
+											</div>
+										</div>
+										<div class="topstory__article" data-topstory="5">
+											<div class="topstory__article-row">
+												<div class="topstory__article-img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=1920&amp;h=630&amp;mtime=1667166963&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/16_vitkovice_lev.jpg" loading="lazy" alt="" />
+												</div>
+												<h2>
+													<a title="" href="clanek.asp?id=Vsechno-je-to-o-golech-a-zakonceni-je-si-vedom-Jakub-Lev-11521">Dvě výhry a dvě porážky. Dorostenci absolvovali prestižní
+														turnaj v Pardubicích</a>
+												</h2>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="topstory__articles-mobile">
+						<div class="row">
+							<div class="col-12 col-md-4">
+								<div class="article_list__item">
+									<div class="row">
+										<div class="col-4 col-sm-4 col-md-12">
+											<div class="article_list__image">
+												<a href="#" title=""><img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1667601631&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/18_budejovice_piegl.jpg" alt="" /></a>
+											</div>
+										</div>
+										<div class="col-8 col-sm-8 col-md-12">
+											<div class="article_list__text">
+												<h3 class="h4">
+													<a href="#" title="">René Piegl po návratu domů: Jsem strašně rád za zápas</a>
+												</h3>
+												<div class="article_list__info text-primary">2. 9. 2021</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--/.article_list__item-->
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="article_list__item">
+									<div class="row">
+										<div class="col-4 col-sm-4 col-md-12">
+											<div class="article_list__image">
+												<a href="#" title=""><img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1664017075&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/9trida_benatky.jpg" alt="" /></a>
+											</div>
+										</div>
+										<div class="col-8 col-sm-8 col-md-12">
+											<div class="article_list__text">
+												<h3 class="h4">
+													<a href="#" title="">Druhá prohra v řadě. Devítka doma nedala Liberci gól</a>
+												</h3>
+												<div class="article_list__info text-primary">2. 9. 2021</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--/.article_list__item-->
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="article_list__item">
+									<div class="row">
+										<div class="col-4 col-sm-4 col-md-12">
+											<div class="article_list__image">
+												<a href="#" title=""><img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1667591326&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/18_budejovice.jpg" alt="" /></a>
+											</div>
+										</div>
+										<div class="col-8 col-sm-8 col-md-12">
+											<div class="article_list__text">
+												<h3 class="h4">
+													<a href="#" title="">Tuhá bitva na jihu Čech, Hradec ztratil body až v
+														závěru</a>
+												</h3>
+												<div class="article_list__info text-primary">2. 9. 2021</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--/.article_list__item-->
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="article_list__item">
+									<div class="row">
+										<div class="col-4 col-sm-4 col-md-12">
+											<div class="article_list__image">
+												<a href="#" title=""><img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" /></a>
+											</div>
+										</div>
+										<div class="col-8 col-sm-8 col-md-12">
+											<div class="article_list__text">
+												<h3 class="h4">
+													<a href="#" title="">Znovu za CHL! Balíčky na letecký trip do Karlstadu jsou v
+														prodeji</a>
+												</h3>
+												<div class="article_list__info text-primary">2. 9. 2021</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--/.article_list__item-->
+							</div>
+						</div>
+						<a class="btn ml-auto btn--100 d-block d-md-none mb-4" href="archiv.asp">Další články</a>
+					</div>
+				</div>
+			</section>
+			<div class="mt-section">
+				<div class="container">
+					<div class="bt-section">
+						<div class="row">
+							<div class="col-12">
+								<section class="c-matchboard-section">
+									<div class="c-matchboard-section__inner mb-md-4">
+										<div class="row gx-0">
+											<div class="col-md-6">
+												<div class="row gx-0">
+													<div class="col-xxl-6">
+														<div class="c-matchboard__item">
+															<p class="p3 text-center mb-4">
+																12. kolo TELH / so 4. 9. 2021, 18:00
+															</p>
+															<div class="c-matchboard__logos">
+																<div class="c-matchboard__logo">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																</div>
+																<div class="c-matchboard__logo">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																</div>
+															</div>
+															<div class="c-matchboard__info">
+																<div class="c-matchboard__teams">
+																	<h4 class="h6">HC Olomouc</h4>
+																	<h4 class="h6">HC Dynamo Pardubice</h4>
+																</div>
+																<div class="c-matchboard__result win">8:2</div>
+															</div>
+															<ul class="c-matchboard__links">
+																<li>
+																	<a class="btn btn-secondary" href="#"> Reportáž </a>
+																</li>
+																<li>
+																	<a class="btn btn-secondary" href="#"> Fotogalerie </a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<div class="col-xxl-6">
+														<div class="c-matchboard__item">
+															<p class="p3 text-center mb-4">
+																12. kolo TELH / so 4. 9. 2021, 18:00
+															</p>
+															<div class="c-matchboard__logos">
+																<div class="c-matchboard__logo">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																</div>
+																<div class="c-matchboard__logo">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																</div>
+															</div>
+															<div class="c-matchboard__info">
+																<div class="c-matchboard__teams">
+																	<h4 class="h6">HC Olomouc</h4>
+																	<h4 class="h6">HC Dynamo Pardubice</h4>
+																</div>
+																<div class="c-matchboard__result lose">4:6p</div>
+															</div>
+															<ul class="c-matchboard__links">
+																<li>
+																	<a class="btn btn-secondary" href="#"> Reportáž </a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<a href="#" class="btn btn-desc">Všechny odehrané zápasy</a>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="c-matchboard__bigitem">
+													<div class="c-matchboard__bigitem-wrap">
+														<p class="p2 mb-4">
+															<strong>13. kolo TELH / út 7. 9. 2021, 17:00</strong>
+														</p>
+														<div class="c-matchboard__logos">
+															<div class="c-matchboard__logo">
+																<img src="images/content/logo.png" loading="lazy" alt="logo" />
+															</div>
+															<div class="c-matchboard__logo">
+																<img src="images/content/logo.png" loading="lazy" alt="logo" />
+															</div>
+														</div>
+														<div class="c-matchboard__info">
+															<div class="c-matchboard__teams">
+																<h4 class="h4">HC Olomouc</h4>
+																<h4 class="h4">HC Dynamo Pardubice</h4>
+															</div>
+														</div>
+													</div>
+													<div class="c-matchboard__calendar">
+														<div id="countdown-wrapper" class="timer" data-datetime="2022-11-30T10:00:00">
+															<span class="timer__item" id="timer-days">
+																<span class="timer__label timer__label-days" id="countdown-days-label">Dní</span>
+																<span class="timer__value" id="countdown-days"></span>
+															</span>
+															<span class="timer__item" id="timer-hours">
+																<span class="timer__label" id="countdown-hours-label">Hodin</span>
+																<span class="timer__value" id="countdown-hours"></span>
+															</span>
+															<span class="timer__item" id="timer-minutes">
+																<span class="timer__label" id="countdown-minutes-label">Minut</span>
+																<span class="timer__value" id="countdown-minutes"></span>
+															</span>
+															<span class="timer__item">
+																<span class="timer__label" id="countdown-seconds-label">Sekund</span>
+																<span class="timer__value" id="countdown-seconds"></span>
+															</span>
+														</div>
+														<ul class="c-matchboard__links">
+															<li>
+																<a class="btn btn-primary" href="#"> Preview </a>
+															</li>
+															<li>
+																<a class="btn btn-primary" href="#"> Preview </a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="btns__row">
+										<a href="#" class="btn">Všechny odehrané zápasy</a>
+										<a href="#" class="btn">Všechny nadcházející zápasy</a>
+									</div>
+								</section>
+								<div class="pub">
+									<div class="row g-lg-8 g-4">
+										<div class="col-md-4">
+											<a href="#">
+												<img src="https://via.placeholder.com/432x112" loading="lazy" alt="" />
+											</a>
+										</div>
+										<div class="col-md-4">
+											<a href="#">
+												<img src="https://via.placeholder.com/432x112" loading="lazy" alt="" />
+											</a>
+										</div>
+										<div class="col-md-4">
+											<a href="#">
+												<img src="https://via.placeholder.com/432x112" loading="lazy" alt="" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<section class="hp-posts-section">
+									<div class="row g-lg-8 g-4 mb-md-4">
+										<div class="col-lg-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="text-primary">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-lg-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="text-primary">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<a href="#" class="btn btn-desc">Všechny fotogalerie</a>
+										<div class="col-lg-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="text-primary">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-lg-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="text-primary">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="btns__row">
+										<a href="#" class="btn">Všechny fotogalerie</a>
+										<a href="#" class="btn">Další články</a>
+									</div>
+								</section>
+								<section class="hp-board-section mb-lg-4">
+									<div class="row g-8">
+										<div class="col-xl-4 col-lg-8 col-md-10 mx-auto">
+											<h5 class="h4 mb-4 text-uppercase text-primary">Tabulka extraligy</h5>
+											<div class="hp-board-section__table">
+												<table>
+													<thead>
+														<tr>
+															<th>#</th>
+															<th class="team">Tým</th>
+															<th>Z</th>
+															<th>V</th>
+															<th>VP</th>
+															<th>PP</th>
+															<th>P</th>
+															<th>Skóre</th>
+															<th>B</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>99.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr class="olo">
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+														<tr>
+															<td>1.</td>
+															<td class="team">
+																<a href="#">
+																	<img src="images/content/logo.png" loading="lazy" alt="logo" />
+																	OLO
+																</a>
+															</td>
+															<td>12</td>
+															<td>8</td>
+															<td>2</td>
+															<td>1</td>
+															<td>1</td>
+															<td>32:18</td>
+															<td>29</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="col-lg-8 col-md-10 mx-auto">
+											<h5 class="h4 mb-4 text-uppercase text-primary">
+												Kohouti na sociálních sítích
+											</h5>
+											<div class="hp-board__social">
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Takto vypadá sestava na poslední přípravný zápas před novou sezonou
+														s Mountfield HK. 🍀💪 Přijďte Hanáky povzbudit od 17:00 přímo do
+														plecharény. 🐔🐓 #VšeciSpolu #donovesezony #olomhk
+													</p>
+												</a>
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1664017075&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/9trida_benatky.jpg" alt="" />
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Po první třetině jsou o krok napřed hosté, které poslal do vedení
+														Aleš Jergl. #VšeciSpolu #olomhk
+													</p>
+												</a>
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1664017075&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/9trida_benatky.jpg" alt="" />
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Po první třetině jsou o krok napřed hosté, které poslal do vedení
+														Aleš Jergl. #VšeciSpolu #olomhk
+													</p>
+												</a>
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1664017075&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/9trida_benatky.jpg" alt="" />
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Po první třetině jsou o krok napřed hosté, které poslal do vedení
+														Aleš Jergl. #VšeciSpolu #olomhk
+													</p>
+												</a>
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Takto vypadá sestava na poslední přípravný zápas před novou sezonou
+														s Mountfield HK. 🍀💪 Přijďte Hanáky povzbudit od 17:00 přímo do
+														plecharény. 🐔🐓 #VšeciSpolu #donovesezony #olomhk
+													</p>
+												</a>
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1664017075&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/9trida_benatky.jpg" alt="" />
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Po první třetině jsou o krok napřed hosté, které poslal do vedení
+														Aleš Jergl. #VšeciSpolu #olomhk
+													</p>
+												</a>
+
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Takto vypadá sestava na poslední přípravný zápas před novou sezonou
+														s Mountfield HK. 🍀💪 Přijďte Hanáky povzbudit od 17:00 přímo do
+														plecharény. 🐔🐓 #VšeciSpolu #donovesezony #olomhk
+													</p>
+												</a>
+
+												<a href="#" class="hp-board__social-item">
+													<div class="hp-board__social-img">
+														<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1664017075&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/9trida_benatky.jpg" alt="" />
+														<span> <svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+																<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+															</svg> </span>
+													</div>
+													<p class="p3">
+														Po první třetině jsou o krok napřed hosté, které poslal do vedení
+														Aleš Jergl. #VšeciSpolu #olomhk
+													</p>
+												</a>
+											</div>
+										</div>
+									</div>
+								</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<section class="hp-tabs-section">
+					<div class="hp-tabs__header--respons">
+						<div class="container">
+							<ul class="hp-tabs__header row g-6">
+								<li class="active col-auto">
+									<a href="#"> mládež </a>
+								</li>
+								<li class="col-auto">
+									<a href="#"> Junioři </a>
+								</li>
+								<li class="col-auto">
+									<a href="#"> Dorost </a>
+								</li>
+								<li class="col-auto">
+									<div class="o-content">
+										<select class="js-select">
+											<option value="">Třídy</option>
+											<option value="">Třída 1</option>
+											<option value="">Třída 2</option>
+											<option value="">Třída 3</option>
+										</select>
+									</div>
+								</li>
+								<li class="col-auto">
+									<a href="#"> Přípravka </a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="tabs-wrapper">
+						<div class="hp-tabs__menu">
+							<div class="container">
+								<ul class="hp-tabs__menu-list tabs">
+									<li>
+										<a href="#" class="tab active" data-id="1">Soupiska</a>
+									</li>
+									<li>
+										<a href="#" class="tab" data-id="2">Zápasy</a>
+									</li>
+									<li>
+										<a href="#" class="tab" data-id="3">Realizační tým</a>
+									</li>
+									<li>
+										<a href="#" class="tab" data-id="4">Tabulka</a>
+									</li>
+									<li>
+										<a href="#" class="tab" data-id="5">Statistiky</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="hp-tabs__content--bg">
+							<div class="container">
+								<div class="tab-content tab-active" id="1">
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="btns__row">
+										<a href="#" class="btn">Všechny zápasy</a>
+										<a href="#" class="btn">Všechny články</a>
+									</div>
+								</div>
+								<div class="tab-content" id="2">
+									2
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="btns__row">
+										<a href="#" class="btn">Všechny zápasy</a>
+										<a href="#" class="btn">Všechny články</a>
+									</div>
+								</div>
+								<div class="tab-content" id="3">
+									3
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="btns__row">
+										<a href="#" class="btn">Všechny zápasy</a>
+										<a href="#" class="btn">Všechny články</a>
+									</div>
+								</div>
+								<div class="tab-content" id="4">
+									4
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="btns__row">
+										<a href="#" class="btn">Všechny zápasy</a>
+										<a href="#" class="btn">Všechny články</a>
+									</div>
+								</div>
+								<div class="tab-content" id="5">
+									5
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="btns__row">
+										<a href="#" class="btn">Všechny zápasy</a>
+										<a href="#" class="btn">Všechny články</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="pub pub--bottom">
+					<div class="container">
+						<div class="row gx-lg-8 gy-4 g-4">
+							<div class="col-xl-3 col-md-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-3 col-md-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-3 col-md-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-3 col-md-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-2 col-md-4 col-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-2 col-md-4 col-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-2 col-md-4 col-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-2 col-md-4 col-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-2 col-md-4 col-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+								</a>
+							</div>
+							<div class="col-xl-2 col-md-4 col-6">
+								<a href="#">
+									<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</main>
+		<footer class="footer">
+			<a class="footer__logo" href="">
+				<img src="images/content/logo.png" loading="lazy" alt="logo" />
+			</a>
+			<div class="container">
+				<div class="footer__inner">
+					<p class="p2">
+						<strong>
+							Copyright © 2010-2021 HC OLOMOUC, s.r.o. &
+							<a href="https://esportsmedia.cz/">eSports.cz, s.r.o</a>
+						</strong>
+					</p>
+					<ul class="footer__links">
+						<li>
+							<a href="#">Informace o autorských právech </a>
+						</li>
+						|
+						<li>
+							<a href="#">RSS</a>
+						</li>
+						|
+						<li>
+							<a href="#">Kontakt</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script defer src="js/scripts.js?v=20221111195"></script>
+</body>
+
+</html>

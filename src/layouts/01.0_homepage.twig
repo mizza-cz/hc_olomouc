@@ -1,0 +1,21 @@
+{% extends "@components/base/base.twig" %} {% set title = "01.0_homepage" %} {%
+block main %} {% include "@components/topstory-section/topstory-section.twig" %}
+<div class="mt-section">
+  <div class="container">
+    <div class="bt-section">
+      <div class="row">
+        <div class="col-12">
+          {% include "@components/matchboard-section/matchboard-section.twig" %}
+          {% include "@components/pubs/pubs.twig" %}
+          {% include "@components/hp-posts-section/hp-posts-section.twig" %}
+          {% include "@components/hp-board-section/hp-board-section.twig" %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include "@components/hp-tabs-section/hp-tabs-section.twig" %}
+  {% include "@components/pubs/pubs-bottom.twig" %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,146 @@
+.hp-board-section {
+  &__table {
+    background-color: var(--color-light);
+    padding: 18px 0px;
+    @include media-breakpoint-down(sm) {
+      overflow-x: auto;
+
+      table {
+        width: 540px;
+      }
+    }
+    tr td:first-child,
+    th:first-child {
+      text-align: left;
+      padding-left: 32px;
+      padding-right: 6px;
+    }
+    tr td:last-child,
+    th:last-child {
+      text-align: right;
+      padding-right: 32px;
+      padding-left: 12px;
+    }
+    tr td,
+    th {
+      text-align: center;
+      width: 30px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    th {
+      font-size: 12px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--color-dark);
+      padding: 4px 8px;
+      text-transform: uppercase;
+      &:first-child {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          height: 3px;
+          width: 32px;
+          background-color: #fff;
+        }
+      }
+      &:last-child {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: -2px;
+          height: 3px;
+          width: 32px;
+          background-color: #fff;
+        }
+      }
+    }
+    td {
+      font-size: 14px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+    .team {
+      font-weight: 700;
+
+      text-align: left;
+      width: 100%;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration-color: transparent;
+        width: max-content;
+        &:hover {
+          text-decoration-color: inherit;
+        }
+      }
+      img {
+        display: inline-block;
+        width: 32px;
+        height: 30px;
+        object-fit: contain;
+        padding-right: 8px;
+      }
+    }
+  }
+}
+.hp-board {
+  &__social {
+    columns: 4 200px;
+    column-gap: 32px;
+    width: 100%;
+    @include media-breakpoint-down(md) {
+      column-gap: 16px;
+    }
+    &-item {
+      background-color: var(--color-light);
+      text-decoration-color: transparent;
+
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 32px;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 16px;
+      }
+      &:hover {
+        text-decoration-color: inherit;
+      }
+      .p3 {
+        padding: 16px;
+      }
+    }
+    &-img {
+      min-height: 32px;
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+      }
+      span {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 32px;
+        height: 32px;
+        background-color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}

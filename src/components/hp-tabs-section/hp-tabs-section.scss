@@ -1,0 +1,119 @@
+.hp-tabs-section {
+  margin-bottom: 40px;
+  .select2-container .select2-selection--single .select2-selection__rendered {
+    font-weight: 700;
+  }
+
+  .c-matchboard__item {
+    height: 50%;
+    padding: 24px;
+    @include media-breakpoint-down(sm) {
+      height: auto;
+    }
+  }
+  .c-matchboard__info {
+    margin-bottom: 0;
+  }
+  .c-matchboard__logo {
+    height: 60px;
+  }
+  .post {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+.hp-tabs__content--bg {
+  background-color: var(--color-dark-primary);
+  padding-top: 32px;
+  padding-bottom: 22px;
+}
+.hp-tabs {
+  &__header--respons {
+    @include media-breakpoint-down(sm) {
+      overflow-x: auto;
+    }
+  }
+  &__menu {
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 4px 0 rgba(#000, 7%);
+    @include media-breakpoint-down(sm) {
+      overflow-x: auto;
+    }
+    &-list {
+      display: flex;
+      justify-content: center;
+      @include media-breakpoint-down(sm) {
+        width: 576px;
+        margin: 0;
+        padding: 0;
+        justify-content: flex-start;
+      }
+      li {
+        padding: 16px 12px;
+      }
+      a {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--color-light);
+        text-decoration-color: transparent;
+        &:hover {
+          text-decoration-color: inherit;
+        }
+      }
+      .active {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__header {
+    align-items: flex-end;
+    @include media-breakpoint-down(sm) {
+      width: max-content;
+      padding-bottom: 6px;
+    }
+    li {
+      display: block;
+      text-transform: uppercase;
+      @include media-breakpoint-down(md) {
+        padding: 0;
+      }
+    }
+    .active {
+      a {
+        font-size: 24px;
+        padding: 8px 40px;
+        background-color: var(--color-primary);
+        color: var(--color-light);
+        @include media-breakpoint-down(md) {
+          padding-left: 20px;
+          padding-right: 20px;
+          font-size: 16px;
+        }
+        &:hover {
+          background-color: var(--color-primary);
+        }
+      }
+    }
+    a {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+      padding: 8px 16px;
+      display: block;
+      background-color: transparent;
+      transition: all 0.3s;
+      &:hover {
+        background-color: var(--color-light);
+      }
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  &.tab-active {
+    display: block;
+  }
+}

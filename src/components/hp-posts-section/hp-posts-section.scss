@@ -1,0 +1,6 @@
+.hp-posts-section {
+  margin-bottom: 36px;
+  @include media-breakpoint-down(xl) {
+    margin-bottom: 32px;
+  }
+}

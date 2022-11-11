@@ -1,0 +1,18 @@
+.btns__row {
+  display: flex;
+  justify-content: space-between;
+  @include media-breakpoint-down(md) {
+    a:first-child {
+      display: none;
+    }
+   
+  }
+}
+.btn.btn-desc {
+  display: none;
+  @include media-breakpoint-down(md) {
+    display: block;
+    margin-bottom: 32px;
+    margin-left: auto;
+  }
+}

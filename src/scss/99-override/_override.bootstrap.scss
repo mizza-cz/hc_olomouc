@@ -1,0 +1,105 @@
+/*! purgecss start ignore */
+.text-primary {
+  color: var(--color-primary);
+}
+.btn {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  width: fit-content;
+  padding: 0;
+  padding-right: 18px;
+  display: block;
+  padding: 2px 34px 2px 0px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: all 0.3s;
+  &:hover {
+    text-decoration-color: inherit;
+  }
+  @include media-breakpoint-down(md) {
+    margin-left: auto;
+    width: 100%;
+    text-align: right;
+    margin-top: 16px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 15px;
+    top: 6px;
+    background-image: url("../images/ico/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.btn-primary {
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border-radius: 3px;
+  padding: 2px 34px 2px 16px;
+  &:hover {
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    &::before {
+      background-image: url("../images/ico/arrow-right-r.svg");
+    }
+  }
+  &::before {
+    background-image: url("../images/ico/arrow-right-w.svg");
+  }
+}
+.btn-secondary {
+  border-radius: 3px;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  padding: 2px 34px 2px 16px;
+  &:hover {
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    &::before {
+      background-image: url("../images/ico/arrow-right-w.svg");
+    }
+  }
+  &::before {
+    background-image: url("../images/ico/arrow-right-r.svg");
+  }
+}
+.mt-section {
+  margin-top: -72px;
+  position: relative;
+  z-index: 6;
+  @media (max-width: 1400px) {
+    margin-top: 0;
+  }
+}
+.bt-section {
+  border-top: 8px solid var(--color-primary);
+}
+.g-0 {
+  margin: 0;
+  padding: 0;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.pl-6 {
+  padding-left: 24px;
+}
+.main-col {
+  padding: 40px 64px;
+  background-color: var(--color-light);
+  @include media-breakpoint-down(lg) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+/*! purgecss end ignore */

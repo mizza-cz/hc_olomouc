@@ -1,0 +1,45 @@
+.post {
+  display: block;
+
+  text-decoration: none;
+  &:hover {
+    .h4 {
+      text-decoration-color: inherit !important;
+    }
+  }
+  &__img {
+    aspect-ratio: 316/211;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__info {
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--color-light);
+    .h4 {
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      min-height: 6rem;
+      text-transform: uppercase;
+      text-decoration: underline;
+      transition: all 0.3s;
+      text-decoration-color: transparent;
+
+      @include media-breakpoint-down(md) {
+        min-height: auto;
+        margin-bottom: 8px;
+      }
+    }
+    span {
+      display: block;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+  }
+}
