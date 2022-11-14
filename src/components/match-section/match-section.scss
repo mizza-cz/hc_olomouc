@@ -1,0 +1,151 @@
+.c-match-section {
+  margin-bottom: 40px;
+  &__game {
+    background-color: var(--color-light2);
+    padding: 28px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
+    &-info {
+      text-align: center;
+      padding: 0 64px;
+
+      @include media-breakpoint-down(md) {
+        padding: 0 32px;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        order: 1;
+        margin-top: 24px;
+      }
+      .h2 {
+        margin-bottom: 4px;
+      }
+    }
+  }
+  &__club {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      text-align: center;
+
+      &:first-child {
+        img {
+          order: -1;
+        }
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      max-width: 50%;
+      flex: 0 0 50%;
+    }
+    img {
+      width: 48px;
+      height: auto;
+      display: block;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 8px;
+      }
+    }
+    .h4 {
+      padding: 0 24px;
+    }
+  }
+  &__info {
+  }
+  &__date {
+    margin-bottom: 32px;
+    padding-top: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -16px;
+    margin-right: -16px;
+    li {
+      position: relative;
+      padding: 0 16px;
+    }
+    li + li {
+      &::before {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 8px;
+        background-color: var(--color-dark);
+        left: 0;
+        top: 6px;
+      }
+    }
+  }
+  &__statistics {
+    display: flex;
+    justify-content: center;
+    margin-left: -4px;
+    margin-right: -4px;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+    li {
+      text-align: center;
+      padding: 0 4px;
+      max-width: 14.2%;
+      flex: 0 0 14.2%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 8px;
+
+      @include media-breakpoint-only(xl) {
+        max-width: 25%;
+        flex: 0 0 25%;
+      }
+      @include media-breakpoint-only(md) {
+        max-width: 25%;
+        flex: 0 0 25%;
+      }
+      @include media-breakpoint-only(sm) {
+        max-width: 33.333%;
+        flex: 0 0 33.333%;
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 50%;
+        flex: 0 0 50%;
+      }
+      .h3 {
+        background-color: var(--color-light2);
+        color: var(--color-primary);
+        padding: 24px 12px;
+        height: 100%;
+        span {
+          margin-bottom: 8px;
+          display: block;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: var(--color-dark);
+          line-height: 1.25;
+        }
+      }
+    }
+  }
+  &__members {
+    padding: 24px 48px;
+    border: 1px solid var(--color-light);
+    position: relative;
+    span {
+      display: block;
+      position: absolute;
+      top: 0;
+      padding: 8px 24px;
+    }
+  }
+  &__members--olo {
+    border: 1px solid var(--color-primary);
+  }
+}

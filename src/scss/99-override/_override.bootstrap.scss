@@ -81,6 +81,7 @@
     margin-top: 0;
   }
 }
+
 .bt-section {
   border-top: 8px solid var(--color-primary);
 }
@@ -96,6 +97,15 @@
 }
 .main-col {
   padding: 40px 64px;
+  background-color: var(--color-light);
+  @include media-breakpoint-down(lg) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.p-line {
+  padding-left: 64px;
+  padding-right: 64px;
   background-color: var(--color-light);
   @include media-breakpoint-down(lg) {
     padding-left: 24px;

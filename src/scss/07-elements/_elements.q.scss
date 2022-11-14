@@ -1,0 +1,56 @@
+q {
+  padding: 24px 0;
+  border-top: 1px solid var(--color-light2);
+  border-bottom: 1px solid var(--color-light2);
+  position: relative;
+  display: block;
+  &::after,
+  &::before {
+    display: none;
+  }
+  h4 {
+    text-transform: uppercase;
+    color: var(--color-primary);
+    max-width: 604px;
+    margin: 0 auto;
+    padding: 0 52px;
+    position: relative;
+    @include media-breakpoint-down(md) {
+      padding: 0 32px;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 10px;
+      color: var(--color-primary);
+      font-size: 40px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &::before {
+      background-image: url("../images/ico/q1.svg");
+      right: 0;
+      top: 0;
+    }
+    &::after {
+      background-image: url("../images/ico/q2.svg");
+      left: 0;
+      bottom: 0;
+    }
+  }
+  span {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-dark);
+    text-transform: capitalize;
+    max-width: 604px;
+    margin: 12px auto 0;
+    padding: 0 52px;
+    @include media-breakpoint-down(md) {
+      padding: 0 32px;
+    }
+  }
+}

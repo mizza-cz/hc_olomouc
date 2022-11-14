@@ -60,6 +60,11 @@
       margin-bottom: 8px;
       padding: 0 4px;
     }
+    .btn {
+      @include media-breakpoint-down(md) {
+        margin-top: 0;
+      }
+    }
   }
   &__info {
     display: flex;

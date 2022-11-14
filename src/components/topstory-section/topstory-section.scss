@@ -86,6 +86,7 @@
   font-size: 40px;
   line-height: 1.175;
   text-transform: uppercase;
+  color: var(--color-light);
   @include media-breakpoint-down(lg) {
     font-size: 32px;
   }
@@ -96,6 +97,9 @@
   margin-left: -8px;
   margin-right: -8px;
   margin-bottom: 8px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 8px;
+  }
   .tag {
     margin-bottom: 8px;
   }
@@ -103,14 +107,17 @@
     padding: 0 8px;
   }
 }
-.topstory__content h1 a {
+.topstory__content h1 {
   color: var(--color-dark);
   text-decoration: none;
 }
 @media (min-width: 576px) {
-  .topstory__content h1 a {
+  .topstory__content h1 {
     color: var(--color-light);
   }
+}
+.topstory__content h1 a {
+  text-decoration-color: transparent;
 }
 .topstory__content h1 a:hover {
   text-decoration: underline;
