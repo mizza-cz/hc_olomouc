@@ -3,7 +3,11 @@
   .select2-container .select2-selection--single .select2-selection__rendered {
     font-weight: 700;
   }
-
+  .o-content th {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    border-bottom: 2px solid var(--color-dark);
+  }
   .c-matchboard__item {
     height: 50%;
     padding: 24px;
