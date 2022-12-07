@@ -72,6 +72,7 @@
   }
   &__header {
     align-items: flex-end;
+    min-height: 80px;
     @include media-breakpoint-down(sm) {
       width: max-content;
       padding-bottom: 6px;
@@ -84,19 +85,17 @@
       }
     }
     .active {
-      a {
-        font-size: 24px;
-        padding: 8px 40px;
+      font-size: 24px;
+      padding: 8px 40px;
+      background-color: var(--color-primary);
+      color: var(--color-light);
+      @include media-breakpoint-down(md) {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+      }
+      &:hover {
         background-color: var(--color-primary);
-        color: var(--color-light);
-        @include media-breakpoint-down(md) {
-          padding-left: 20px;
-          padding-right: 20px;
-          font-size: 16px;
-        }
-        &:hover {
-          background-color: var(--color-primary);
-        }
       }
     }
     a {

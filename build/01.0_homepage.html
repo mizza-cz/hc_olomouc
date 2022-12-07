@@ -10,8 +10,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap" rel="stylesheet" />
 	<link rel="preload" href="css/styles.css" as="style" />
-	<link rel="stylesheet" media="screen, handheld" href="css/styles.css?v=202211165934" />
-	<link rel="stylesheet" media="print" href="css/prints.css?v=202211165934" />
+	<link rel="stylesheet" media="screen, handheld" href="css/styles.css?v=202212075489" />
+	<link rel="stylesheet" media="print" href="css/prints.css?v=202212075489" />
 	<link rel="preload" href="https://code.jquery.com/jquery-3.6.0.min.js" as="script" crossorigin />
 	<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" as="script" crossorigin />
 	<link rel="preload" href="js/scripts.js" as="script" />
@@ -1029,31 +1029,35 @@
 						</div>
 					</div>
 				</div>
+
 				<section class="hp-tabs-section">
 					<div class="hp-tabs__header--respons">
 						<div class="container">
-							<ul class="hp-tabs__header row g-6">
-								<li class="active col-auto">
-									<a href="#"> mládež </a>
+							<ul class="hp-tabs__header row g-6 tabs">
+								<li class="col-auto">
+									<a class="tab active" href="#" data-id="1"> mládež </a>
 								</li>
 								<li class="col-auto">
-									<a href="#"> Junioři </a>
+									<a class="tab" data-id="2" href="#"> Junioři </a>
 								</li>
 								<li class="col-auto">
-									<a href="#"> Dorost </a>
+									<a class="tab" data-id="3" href="#"> Dorost </a>
 								</li>
 								<li class="col-auto">
-									<div class="o-content">
-										<select class="js-select">
-											<option value="">Třídy</option>
-											<option value="">Třída 1</option>
-											<option value="">Třída 2</option>
-											<option value="">Třída 3</option>
-										</select>
-									</div>
+									<a class="tab" data-id="4" href="#"> Třídy </a>
 								</li>
+								<!-- <li class="col-auto">
+          <div class="o-content">
+            <select class="js-select">
+              <option value="">Třídy</option>
+              <option data-id="5" value="">Třída 1</option>
+              <option value="">Třída 2</option>
+              <option value="">Třída 3</option>
+            </select>
+          </div>
+        </li> -->
 								<li class="col-auto">
-									<a href="#"> Přípravka </a>
+									<a class="tab" href="#" data-id="5"> Přípravka </a>
 								</li>
 							</ul>
 						</div>
@@ -1062,21 +1066,21 @@
 					<div class="tabs-wrapper">
 						<div class="hp-tabs__menu">
 							<div class="container">
-								<ul class="hp-tabs__menu-list tabs">
+								<ul class="hp-tabs__menu-list">
 									<li>
-										<a href="#" class="tab" data-id="1">Soupiska</a>
+										<a href="#">Soupiska</a>
 									</li>
 									<li>
-										<a href="#" class="tab active" data-id="2">Zápasy</a>
+										<a href="#">Zápasy</a>
 									</li>
 									<li>
-										<a href="#" class="tab" data-id="3">Realizační tým</a>
+										<a href="#">Realizační tým</a>
 									</li>
 									<li>
-										<a href="#" class="tab" data-id="4">Tabulka</a>
+										<a href="#">Tabulka</a>
 									</li>
 									<li>
-										<a href="#" class="tab" data-id="5">Statistiky</a>
+										<a href="#">Statistiky</a>
 									</li>
 								</ul>
 							</div>
@@ -1084,144 +1088,81 @@
 						<div class="hp-tabs__content--bg">
 							<div class="container">
 								<div class="tab-content" id="1">
-									<div class="c-team-section">
-										<div class="o-content">
-											<table>
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>jméno</th>
-														<th>narozen</th>
-														<th>věk</th>
-														<th>výška</th>
-														<th>váha</th>
-														<th>hůl</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-													<tr>
-														<td>33</td>
-														<td>
-															<a href="#">Gašper Krošelj</a>
-														</td>
-														<td>9.2.1987</td>
-														<td>31 let</td>
-														<td>189 cm</td>
-														<td>89 kg</td>
-														<td>L</td>
-													</tr>
-												</tbody>
-											</table>
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -1309,7 +1250,6 @@
 									</div>
 								</div>
 								<div class="tab-content" id="3">
-									3
 									<div class="row g-8 mb-md-4">
 										<div class="col-xl-3 col-sm-6">
 											<div class="c-matchboard__item">
@@ -1393,327 +1333,160 @@
 									</div>
 								</div>
 								<div class="tab-content" id="4">
-									<div class="o-content mt-8">
-										<table>
-											<thead>
-												<tr>
-													<th>P.</th>
-													<th>Tým</th>
-													<th>Z</th>
-													<th>V</th>
-													<th>R</th>
-													<th>P</th>
-													<th>B</th>
-													<th>Skóre</th>
-													<th>RG</th>
-													<th>+/-</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>3.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>4.</td>
-													<td>FC Zbrojovka Brno Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr class="olo">
-													<td>2.</td>
-													<td>HC Olomouc</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>33.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>9.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC bbZbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC aaZbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-												<tr>
-													<td>1.</td>
-													<td>FC Zbrojovka Brno</td>
-													<td>27</td>
-													<td>13</td>
-													<td>18</td>
-													<td>20</td>
-													<td>13</td>
-													<td>56:24</td>
-													<td>32</td>
-													<td>26</td>
-												</tr>
-											</tbody>
-										</table>
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
 									</div>
 								</div>
 								<div class="tab-content" id="5">
-									<div class="c-table-section">
-										<div class="o-content mb-4">
-											<table class="">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>obránci</th>
-														<th>P</th>
-														<th>Z</th>
-														<th>G</th>
-														<th>A</th>
-														<th>B</th>
-														<th>+/-</th>
-														<th>TM</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>4.</td>
-														<td><a href="#">kkGašper Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-													<tr>
-														<td>2.</td>
-														<td><a href="#">ddGašper Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-													<tr>
-														<td>88.</td>
-														<td><a href="#">XXGašper Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-													<tr>
-														<td>66.</td>
-														<td><a href="#">AAGašpaer Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-													<tr>
-														<td>32.</td>
-														<td><a href="#">Gašper Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-													<tr>
-														<td>32.</td>
-														<td><a href="#">Gašper Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-													<tr>
-														<td>32.</td>
-														<td><a href="#">Gašper Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-													<tr>
-														<td>32.</td>
-														<td><a href="#">Gašper Krošelj</a></td>
-														<td>32</td>
-														<td>755</td>
-														<td>20</td>
-														<td>32</td>
-														<td>26</td>
-														<td>32</td>
-														<td>26</td>
-													</tr>
-												</tbody>
-											</table>
+									<div class="row g-8 mb-md-4">
+										<div class="col-xl-3 col-sm-6">
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+												</div>
+											</div>
+											<div class="c-matchboard__item">
+												<p class="p3 text-center mb-4">
+													12. kolo TELH / so 4. 9. 2021, 18:00
+												</p>
+												<div class="c-matchboard__logos">
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+													<div class="c-matchboard__logo">
+														<img src="images/content/logo.png" loading="lazy" alt="logo" />
+													</div>
+												</div>
+												<div class="c-matchboard__info">
+													<div class="c-matchboard__teams">
+														<h4 class="h6">HC Olomouc</h4>
+														<h4 class="h6">HC Dynamo Pardubice</h4>
+													</div>
+													<div class="c-matchboard__result win">8:2</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
+										</div>
+										<div class="col-xl-3 col-sm-6">
+											<a class="post" href="#">
+												<div class="post__img">
+													<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+												</div>
+												<div class="post__info">
+													<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+													<span class="">2. 9. 2021</span>
+												</div>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -1812,7 +1585,7 @@
 	</div>
 	<script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<script defer src="js/scripts.js?v=202211162151"></script>
+	<script defer src="js/scripts.js?v=202212074643"></script>
 </body>
 
 </html>
