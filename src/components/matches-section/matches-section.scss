@@ -70,9 +70,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  .btn + .btn {
-    margin-left: 4px;
-  }
+
   &--d,
   &--o {
     background: rgba(238, 240, 242, 0.4);
@@ -90,31 +88,44 @@
   &__result {
     font-size: 40px;
     font-weight: 700;
-    margin-right: 68px;
+    padding-right: 48px;
     line-height: 100%;
     @include media-breakpoint-down(xl) {
-      margin-right: 0;
+      padding-right: 0;
       margin-bottom: 16px;
     }
   }
   &__links {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    .btn {
+      white-space: nowrap;
+      margin-bottom: 8px;
+      width: 110px;
+    }
     @include media-breakpoint-down(xl) {
       justify-content: center;
       display: flex;
       flex-wrap: wrap;
+      flex-direction: row;
       .btn {
-        margin-bottom: 8px;
         width: auto;
+        margin: 0 4px 8px;
       }
     }
   }
   &__team {
     .h3 {
       color: var(--color-dark);
+      font-size: 1.2rem;
+      padding-right: 4px;
     }
     @include media-breakpoint-down(xl) {
       margin-bottom: 16px;
+      text-align: center;
     }
   }
   &__logos {
@@ -138,7 +149,7 @@
     }
   }
   &__date {
-    min-width: 160px;
+    min-width: 140px;
     padding: 0 16px;
     @include media-breakpoint-down(xl) {
       text-align: center;
