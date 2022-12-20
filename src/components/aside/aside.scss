@@ -1,4 +1,25 @@
 .aside {
+  &-players {
+    td {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--color-light2);
+      a {
+        text-decoration-color: transparent;
+        &:hover {
+          text-decoration-color: inherit;
+        }
+      }
+    }
+    td:last-child {
+      text-align: right;
+    }
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
   .h4 {
     text-transform: uppercase;
   }

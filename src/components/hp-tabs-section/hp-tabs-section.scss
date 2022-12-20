@@ -1,5 +1,22 @@
 .hp-tabs-section {
   margin-bottom: 40px;
+  &__title {
+    font-size: 24px;
+    padding: 8px 40px;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media-breakpoint-down(md) {
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 16px;
+    }
+  }
   .select2-container .select2-selection--single .select2-selection__rendered {
     font-weight: 700;
   }
@@ -74,30 +91,20 @@
     align-items: flex-end;
     min-height: 80px;
     @include media-breakpoint-down(sm) {
-      width: max-content;
       padding-bottom: 6px;
+      margin: 0;
+      height: auto;
+      min-height: auto;
     }
     li {
       display: block;
       text-transform: uppercase;
       @include media-breakpoint-down(md) {
         padding: 0;
+        margin-top: 16px;
       }
     }
-    .active {
-      font-size: 24px;
-      padding: 8px 40px;
-      background-color: var(--color-primary);
-      color: var(--color-light);
-      @include media-breakpoint-down(md) {
-        padding-left: 20px;
-        padding-right: 20px;
-        font-size: 16px;
-      }
-      &:hover {
-        background-color: var(--color-primary);
-      }
-    }
+
     a {
       font-size: 16px;
       font-weight: 700;
@@ -107,9 +114,16 @@
       display: block;
       background-color: transparent;
       transition: all 0.3s;
+      @include media-breakpoint-down(sm) {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
       &:hover {
         background-color: var(--color-light);
       }
+    }
+    .active {
+      background-color: var(--color-light);
     }
   }
 }

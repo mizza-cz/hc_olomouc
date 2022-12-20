@@ -1,34 +1,27 @@
-
 <section class="hp-tabs-section">
   <div class="hp-tabs__header--respons">
     <div class="container">
-      <ul class="hp-tabs__header row g-6 tabs">
-        <li class="col-auto">
-          <a class="tab active" href="#" data-id="1"> mládež </a>
-        </li>
-        <li class="col-auto">
-          <a class="tab" data-id="2" href="#"> Junioři </a>
-        </li>
-        <li class="col-auto">
-          <a class="tab" data-id="3" href="#"> Dorost </a>
-        </li>
-        <li class="col-auto">
-          <a class="tab" data-id="4" href="#"> Třídy </a>
-        </li>
-        <!-- <li class="col-auto">
-          <div class="o-content">
-            <select class="js-select">
-              <option value="">Třídy</option>
-              <option data-id="5" value="">Třída 1</option>
-              <option value="">Třída 2</option>
-              <option value="">Třída 3</option>
-            </select>
-          </div>
-        </li> -->
-        <li class="col-auto">
-          <a class="tab" href="#" data-id="5"> Přípravka </a>
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-auto">
+          <div class="hp-tabs-section__title">mládež</div>
+        </div>
+        <div class="col-sm-auto col-12">
+          <ul class="hp-tabs__header row g-6 tabs">
+            <li class="col-auto">
+              <a class="tab active" data-id="2" href="#"> Junioři </a>
+            </li>
+            <li class="col-auto">
+              <a class="tab" data-id="3" href="#"> Dorost </a>
+            </li>
+            <li class="col-auto">
+              <a class="tab" data-id="4" href="#"> Třídy </a>
+            </li>
+            <li class="col-auto">
+              <a class="tab" href="#" data-id="5"> Přípravka </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -56,77 +49,6 @@
     </div>
     <div class="hp-tabs__content--bg">
       <div class="container">
-        <div class="tab-content" id="1">
-          <div class="row g-8 mb-md-4">
-            <div class="col-xl-3 col-sm-6">
-              <div class="c-matchboard__item">
-                <p class="p3 text-center mb-4">
-                  12. kolo TELH / so 4. 9. 2021, 18:00
-                </p>
-                <div class="c-matchboard__logos">
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                </div>
-                <div class="c-matchboard__info">
-                  <div class="c-matchboard__teams">
-                    <h4 class="h6">HC Olomouc</h4>
-                    <h4 class="h6">HC Dynamo Pardubice</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="c-matchboard__item">
-                <p class="p3 text-center mb-4">
-                  12. kolo TELH / so 4. 9. 2021, 18:00
-                </p>
-                <div class="c-matchboard__logos">
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                </div>
-                <div class="c-matchboard__info">
-                  <div class="c-matchboard__teams">
-                    <h4 class="h6">HC Olomouc</h4>
-                    <h4 class="h6">HC Dynamo Pardubice</h4>
-                  </div>
-                  <div class="c-matchboard__result win">8:2</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6">
-              {% include "@components/post/post-2.twig" %}
-            </div>
-
-            <div class="col-xl-3 col-sm-6">
-              {% include "@components/post/post-2.twig" %}
-            </div>
-            <div class="col-xl-3 col-sm-6">
-              {% include "@components/post/post-2.twig" %}
-            </div>
-          </div>
-        </div>
         <div class="tab-content tab-active" id="2">
           <div class="row g-8 mb-md-4">
             <div class="col-xl-3 col-sm-6">
