@@ -47,8 +47,9 @@
     color: var(--color-primary);
     font-size: 120px;
     font-weight: 700;
-    line-height: normal;
+
     @include media-breakpoint-down(lg) {
+      line-height: normal;
       font-size: 100px;
       margin-bottom: 16px;
     }
