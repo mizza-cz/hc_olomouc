@@ -26,30 +26,130 @@
   </div>
 
   <div class="tabs-wrapper">
-    <div class="hp-tabs__menu">
-      <div class="container">
-        <ul class="hp-tabs__menu-list">
-          <li>
-            <a href="#">Soupiska</a>
-          </li>
-          <li>
-            <a href="#">Zápasy</a>
-          </li>
-          <li>
-            <a href="#">Realizační tým</a>
-          </li>
-          <li>
-            <a href="#">Tabulka</a>
-          </li>
-          <li>
-            <a href="#">Statistiky</a>
-          </li>
-        </ul>
+    <div class="tab-content tab-active" id="2">
+      <div class="hp-tabs__menu">
+        <div class="container">
+          <ul class="hp-tabs__menu-list">
+            <li>
+              <a href="#">Soupiska</a>
+            </li>
+            <li>
+              <a href="#">Zápasy</a>
+            </li>
+            <li>
+              <a href="#">Realizační tým</a>
+            </li>
+            <li>
+              <a href="#">Tabulka</a>
+            </li>
+            <li>
+              <a href="#">Statistiky</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hp-tabs__content--bg">
+        <div class="container">
+          <div class="row g-8 mb-md-4">
+            <div class="col-xl-3 col-sm-6">
+              <div class="c-matchboard__item">
+                <p class="p3 text-center mb-4">
+                  12. kolo TELH / so 4. 9. 2021, 18:00
+                </p>
+                <div class="c-matchboard__logos">
+                  <div class="c-matchboard__logo">
+                    <img
+                      src="images/content/logo.png"
+                      loading="lazy"
+                      alt="logo"
+                    />
+                  </div>
+                  <div class="c-matchboard__logo">
+                    <img
+                      src="images/content/logo.png"
+                      loading="lazy"
+                      alt="logo"
+                    />
+                  </div>
+                </div>
+                <div class="c-matchboard__info">
+                  <div class="c-matchboard__teams">
+                    <h4 class="h6">HC Olomouc</h4>
+                    <h4 class="h6">HC Dynamo Pardubice</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="c-matchboard__item">
+                <p class="p3 text-center mb-4">
+                  12. kolo TELH / so 4. 9. 2021, 18:00
+                </p>
+                <div class="c-matchboard__logos">
+                  <div class="c-matchboard__logo">
+                    <img
+                      src="images/content/logo.png"
+                      loading="lazy"
+                      alt="logo"
+                    />
+                  </div>
+                  <div class="c-matchboard__logo">
+                    <img
+                      src="images/content/logo.png"
+                      loading="lazy"
+                      alt="logo"
+                    />
+                  </div>
+                </div>
+                <div class="c-matchboard__info">
+                  <div class="c-matchboard__teams">
+                    <h4 class="h6">HC Olomouc</h4>
+                    <h4 class="h6">HC Dynamo Pardubice</h4>
+                  </div>
+                  <div class="c-matchboard__result win">8:2</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+              {% include "@components/post/post-2.twig" %}
+            </div>
+
+            <div class="col-xl-3 col-sm-6">
+              {% include "@components/post/post-2.twig" %}
+            </div>
+            <div class="col-xl-3 col-sm-6">
+              {% include "@components/post/post-2.twig" %}
+            </div>
+          </div>
+          <div class="btns__row">
+            <a href="#" class="btn">Všechny zápasy</a>
+            <a href="#" class="btn">Všechny články</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hp-tabs__content--bg">
-      <div class="container">
-        <div class="tab-content tab-active" id="2">
+    <div class="tab-content" id="3">
+      <div class="hp-tabs__menu">
+        <div class="container">
+          <ul class="hp-tabs__menu-list">
+            <li>
+              <a href="#">Soupiska</a>
+            </li>
+            <li>
+              <a href="#">Zápasy</a>
+            </li>
+            <li>
+              <a href="#">Realizační tým</a>
+            </li>
+            <li>
+              <a href="#">Tabulka</a>
+            </li>
+            <li>
+              <a href="#">Statistiky</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hp-tabs__content--bg">
+        <div class="container">
           <div class="row g-8 mb-md-4">
             <div class="col-xl-3 col-sm-6">
               <div class="c-matchboard__item">
@@ -124,7 +224,32 @@
             <a href="#" class="btn">Všechny články</a>
           </div>
         </div>
-        <div class="tab-content" id="3">
+      </div>
+    </div>
+    <div class="tab-content" id="4">
+      <div class="hp-tabs__menu">
+        <div class="container">
+          <ul class="hp-tabs__menu-list">
+            <li>
+              <a href="#">Soupiska</a>
+            </li>
+            <li>
+              <a href="#">Zápasy</a>
+            </li>
+            <li>
+              <a href="#">Realizační tým</a>
+            </li>
+            <li>
+              <a href="#">Tabulka</a>
+            </li>
+            <li>
+              <a href="#">Statistiky</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hp-tabs__content--bg">
+        <div class="container">
           <div class="row g-8 mb-md-4">
             <div class="col-xl-3 col-sm-6">
               <div class="c-matchboard__item">
@@ -199,7 +324,32 @@
             <a href="#" class="btn">Všechny články</a>
           </div>
         </div>
-        <div class="tab-content" id="4">
+      </div>
+    </div>
+    <div class="tab-content" id="5">
+      <div class="hp-tabs__menu">
+        <div class="container">
+          <ul class="hp-tabs__menu-list">
+            <li>
+              <a href="#">Soupiska</a>
+            </li>
+            <li>
+              <a href="#">Zápasy</a>
+            </li>
+            <li>
+              <a href="#">Realizační tým</a>
+            </li>
+            <li>
+              <a href="#">Tabulka</a>
+            </li>
+            <li>
+              <a href="#">Statistiky</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hp-tabs__content--bg">
+        <div class="container">
           <div class="row g-8 mb-md-4">
             <div class="col-xl-3 col-sm-6">
               <div class="c-matchboard__item">
@@ -269,76 +419,9 @@
               {% include "@components/post/post-2.twig" %}
             </div>
           </div>
-        </div>
-        <div class="tab-content" id="5">
-          <div class="row g-8 mb-md-4">
-            <div class="col-xl-3 col-sm-6">
-              <div class="c-matchboard__item">
-                <p class="p3 text-center mb-4">
-                  12. kolo TELH / so 4. 9. 2021, 18:00
-                </p>
-                <div class="c-matchboard__logos">
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                </div>
-                <div class="c-matchboard__info">
-                  <div class="c-matchboard__teams">
-                    <h4 class="h6">HC Olomouc</h4>
-                    <h4 class="h6">HC Dynamo Pardubice</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="c-matchboard__item">
-                <p class="p3 text-center mb-4">
-                  12. kolo TELH / so 4. 9. 2021, 18:00
-                </p>
-                <div class="c-matchboard__logos">
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                  <div class="c-matchboard__logo">
-                    <img
-                      src="images/content/logo.png"
-                      loading="lazy"
-                      alt="logo"
-                    />
-                  </div>
-                </div>
-                <div class="c-matchboard__info">
-                  <div class="c-matchboard__teams">
-                    <h4 class="h6">HC Olomouc</h4>
-                    <h4 class="h6">HC Dynamo Pardubice</h4>
-                  </div>
-                  <div class="c-matchboard__result win">8:2</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6">
-              {% include "@components/post/post-2.twig" %}
-            </div>
-
-            <div class="col-xl-3 col-sm-6">
-              {% include "@components/post/post-2.twig" %}
-            </div>
-            <div class="col-xl-3 col-sm-6">
-              {% include "@components/post/post-2.twig" %}
-            </div>
+          <div class="btns__row">
+            <a href="#" class="btn">Všechny zápasy</a>
+            <a href="#" class="btn">Všechny články</a>
           </div>
         </div>
       </div>
