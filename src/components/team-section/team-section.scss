@@ -38,6 +38,10 @@
     margin-bottom: 16px;
     padding: 0 16px;
     text-decoration-color: transparent;
+    a {
+      text-decoration-color: transparent;
+    }
+
     &:hover {
       .h6 {
         text-decoration-color: var(--color-dark);
@@ -97,6 +101,7 @@
     position: relative;
     overflow: hidden;
     padding: 0 12px;
+
     span {
       height: 26px;
       width: 26px;
@@ -143,6 +148,29 @@
       display: block;
       font-size: 16px;
       line-height: 1.25;
+    }
+  }
+}
+.c-leadership-section {
+  display: flex;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-light2);
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  margin-right: -16px;
+  margin-left: -16px;
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .c-team__item {
+    margin-bottom: 40px;
+    .c-team__img {
+      width: 10rem;
+      height: 9rem;
+      img {
+        background-color: #f4f5f6;
+      }
     }
   }
 }
