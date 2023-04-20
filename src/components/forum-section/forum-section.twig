@@ -1,0 +1,663 @@
+<section class="c-forum-section pt-lg-10 pt-4">
+  <div class="container">
+    <div class="row g-8">
+      <div class="col-xl-9">
+        <div class="main-col">
+          <div class="header-section">
+            <h1 class="h1 text-uppercase text-primary mb-4">Diskuzní fórum</h1>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#myModal"
+              data-whatever=""
+            >
+              Přidat příspěvek
+            </button>
+            <div
+              class="modal fade"
+              id="myModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="myModal"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">
+                      Vložení příspěvku
+                    </h5>
+                  </div>
+                  <div class="modal-body">
+                    <div class="c-forum__modal">
+                      <div id="smiles">
+                        <a onclick="insert_smile(':))');"
+                          ><img
+                            src="images/content/forum/06.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':)');"
+                          ><img
+                            src="images/content/forum/09.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(';)');"
+                          ><img
+                            src="images/content/forum/02.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':)-');"
+                          ><img
+                            src="images/content/forum/08.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('8)');"
+                          ><img
+                            src="images/content/forum/03.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':||');"
+                          ><img
+                            src="images/content/forum/07.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':|');"
+                          ><img
+                            src="images/content/forum/10.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':(');"
+                          ><img
+                            src="images/content/forum/05.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':o');"
+                          ><img
+                            src="images/content/forum/01.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(';(');"
+                          ><img
+                            src="images/content/forum/04.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*1*')"
+                          ><img
+                            src="images/content/forum/11.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*2*')"
+                          ><img
+                            src="images/content/forum/12.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*3*')"
+                          ><img
+                            src="images/content/forum/13.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*4*')"
+                          ><img
+                            src="images/content/forum/14.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*5*')"
+                          ><img
+                            src="images/content/forum/15.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*6*')"
+                          ><img
+                            src="images/content/forum/16.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*7*')"
+                          ><img
+                            src="images/content/forum/17.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*8*')"
+                          ><img
+                            src="images/content/forum/18.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                      </div>
+                      <p class="c-forum__reaction"></p>
+                      <div class="c-forum__box">
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <label for="">
+                              Jméno
+                              <input type="text" name="name" />
+                            </label>
+                          </div>
+                          <div class="col-lg-6">
+                            <label for="">
+                              Heslo
+                              <input type="password" name="" id="" />
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="tag tag--def"
+                      data-bs-dismiss="modal"
+                    >
+                      zavřít
+                    </button>
+                    <button type="button" class="tag tag--primary">
+                      Odeslat
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="c-forum-section__inner">
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="2 Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="3 Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="4 Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+            <div class="c-forum__row">
+              <div class="c-forum__row-left__col">
+                <img
+                  class="mx-auto mb-2"
+                  src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg"
+                  alt=""
+                />
+                <button
+                  type="button"
+                  class=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  data-whatever="First Name"
+                >
+                  Reagovat
+                </button>
+              </div>
+              <div class="c-forum__row-right__col">
+                <div class="c-forum__row-header">
+                  <div>
+                    <a href="#" class="text-primary"><b>Dlouhe jmeno</b></a>
+                    | <span>pohledy bez růžových brýlí</span>
+                  </div>
+                  <p><span class="text-primary">15.4.2023</span>, 15:26</p>
+                </div>
+                <p>
+                  Reakce na daqvid77: za mě nakonec Finalová dvojce pěkná ...
+                </p>
+                <hr />
+                <p>
+                  to už by v Praze neunesli, že by v Čechách nebyl sto let
+                  titul. nedopadly PC bude to muset " zachráni" HK. Budeli to
+                  jinak sundám klobouk
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <nav aria-label="Další stránky">
+            <ul
+              class="pagination d-flex flex-wrap pagination-flat pagination-success"
+            >
+              <li class="page-item active"><a class="page-link">1</a></li>
+              <li class="page-item">
+                <a class="page-link" href="forum?page=2">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="forum?page=3">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="forum?page=4">></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <aside class="aside col-xl-3">
+        <div class="mb-4">
+          <a
+            class="post"
+            href="/article/7406-Nechavali-jsme-na-lede-vsechno-rika-po-zlatu-z-Havirova-Simon-Koncicky-"
+          >
+            <div class="post__img">
+              <img
+                src="/image?file=https://hc-olomouc.cz/foto/simon_koncicky_top.jpg&w=660&h=530&exact=1&topcut=0&format=jpg"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="post__info">
+              <h4 class="h4">
+                Nechávali jsme na ledě všechno, říká po zlatu z Havířova Šimon
+                Končický
+              </h4>
+              <span class="text-primary">16. 4. 2023</span>
+            </div>
+          </a>
+        </div>
+        <div class="mb-4">
+          <a
+            class="post"
+            href="/article/7402-Kazdy-uspech-trenera-potesi-kdyz-vidi-deti-stastne-rika-po-zlatem-Fussenu-Jan-Littner-"
+          >
+            <div class="post__img">
+              <img
+                src="/image?file=https://hc-olomouc.cz/foto/sedmaci_Fussen_2023_zlato_top.jpg&w=660&h=530&exact=1&topcut=0&format=jpg"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="post__info">
+              <h4 class="h4">
+                Každý úspěch trenéra potěší, když vidí děti šťastné, říká po
+                zlatém Füssenu Jan Littner
+              </h4>
+              <span class="text-primary">12. 4. 2023</span>
+            </div>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -115,4 +115,26 @@
 .mb-4 {
   margin-bottom: 1rem !important;
 }
+
+.modal {
+  top: 15%;
+  z-index: 99999;
+}
+.modal-open .main {
+  position: static;
+}
+
+.modal-title {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+.modal-dialog {
+  max-width: 800px !important;
+}
+.modal-footer {
+  button {
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
 /*! purgecss end ignore */
