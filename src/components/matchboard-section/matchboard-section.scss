@@ -1,4 +1,50 @@
 .c-matchboard {
+  &__slider {
+    position: relative;
+    display: flex;
+    height: 100%;
+
+    .slick-list,
+    .slick-track {
+      height: 100%;
+    }
+    .slick-slide + .slick-slide {
+      border-left: 1px solid #f4f5f6;
+      height: 100%;
+    }
+    .slick-slide > div {
+      height: 100%;
+    }
+  }
+  &__btn {
+    position: absolute;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    @include media-breakpoint-down(md) {
+      bottom: 16px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__btnnext {
+    left: 51%;
+  }
+  &__btnprev {
+    right: 51%;
+  }
   &-section {
     margin-bottom: 40px;
   }
@@ -34,7 +80,10 @@
       @include media-breakpoint-down(xxl) {
         margin: 0 auto;
         justify-content: center;
-        text-align-last: left;
+        text-align: left;
+      }
+      @include media-breakpoint-down(md) {
+        text-align: center !important;
       }
     }
     .c-matchboard__logos {
@@ -49,6 +98,9 @@
     background-color: var(--color-light);
     padding: 32px 40px;
     height: 100%;
+  }
+  &__item--gray {
+    background-color: #f4f5f6;
   }
   &__links {
     display: flex;
@@ -70,6 +122,12 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
     .h4,
     .h6 {
       text-transform: uppercase;
@@ -79,6 +137,9 @@
     font-size: 32px;
     line-height: 1.25;
     font-weight: 700;
+    @include media-breakpoint-down(md) {
+      margin-top: 24px;
+    }
   }
   &__logos {
     display: flex;
@@ -96,15 +157,7 @@
     }
   }
 }
-.col-xxl-6 + .col-xxl-6 {
-  .c-matchboard__item {
-    border-left: 1px solid #f4f5f6;
-    @include media-breakpoint-down(xxl) {
-      border-left: none;
-      border-top: 1px solid #f4f5f6;
-    }
-  }
-}
+
 .lose {
   color: var(--color-primary);
 }

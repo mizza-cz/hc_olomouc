@@ -1,7 +1,18 @@
 .header {
   position: relative;
   z-index: 99;
-
+  &__partner {
+    width: 130px;
+    display: block;
+    @include media-breakpoint-down(xxl) {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
   &__top {
     background-color: var(--color-dark-primary);
   }

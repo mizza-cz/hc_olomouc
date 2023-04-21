@@ -4,7 +4,7 @@
 //=include ../../node_modules/lightgallery/lightgallery.umd.js
 //=include ../../node_modules/lightgallery/lightgallery.min.js
 //=include ../../node_modules/materialize-css/dist/js/materialize.min.js
-
+//=include ../../node_modules/slick-carousel/slick/slick.js
 document.addEventListener("DOMContentLoaded", function () {
   //=include ../components/**/*.js
   //=include custom/*.js
