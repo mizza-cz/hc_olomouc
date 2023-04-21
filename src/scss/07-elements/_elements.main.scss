@@ -2,4 +2,9 @@ main {
   background-color: var(--color-light2);
   position: relative;
   z-index: 4;
+  padding-top: 98px;
+  display: block;
+  @include media-breakpoint-down(xxl) {
+    padding-top: 79px;
+  }
 }
