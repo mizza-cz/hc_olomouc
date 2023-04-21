@@ -112,6 +112,8 @@
       }
       .p3 {
         padding: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     &-img {
