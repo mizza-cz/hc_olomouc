@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="cs-CZ">
+
+<head>
+	<meta charset="utf-8" />
+	<title>17.0_registration - HC OLOMOUC</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap" rel="stylesheet" />
+	<link rel="preload" href="css/styles.css" as="style" />
+	<link rel="stylesheet" media="screen, handheld" href="css/styles.css" />
+	<link rel="stylesheet" media="print" href="css/prints.css" />
+	<link rel="preload" href="https://code.jquery.com/jquery-3.6.0.min.js" as="script" crossorigin />
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" as="script" crossorigin />
+	<link href="https://vesna.esports.cz/weby_data/top_bar/top_bar_css.css" rel="stylesheet" />
+	<link rel="preload" href="js/scripts.js" as="script" />
+	<script>
+		(function() {
+			"use strict";
+			/**
+			 * Define global Util object if it doesn't exist
+			 */
+			if ("object" !== typeof window.Timer) {
+				window.Timer = {};
+			}
+			/**
+			 * Namspace string
+			 */
+			Timer.ns = "JavaScript Timer";
+			Timer.getTimeRemaining = function(endtimeRaw) {
+				// Some browsers need a "T" in there...
+				var endtime = new Date(endtimeRaw.replace(/\s/, "T"));
+				var t = Date.parse(endtime) - Date.parse(new Date());
+				var seconds = Math.floor((t / 1000) % 60);
+				var minutes = Math.floor((t / 1000 / 60) % 60);
+				var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+				var days = Math.floor(t / (1000 * 60 * 60 * 24));
+				// Build out the JSON object
+				return {
+					total: t,
+					days: days,
+					hours: hours,
+					minutes: minutes,
+					seconds: seconds,
+				};
+			};
+			Timer.updateClock = function(endtime) {
+				var t = this.getTimeRemaining(endtime);
+				var days = document.getElementById("timer-days");
+				var hours = document.getElementById("timer-hours");
+				var minutes = document.getElementById("timer-minutes");
+				var seconds = document.getElementById("timer-seconds");
+				var den = document.querySelector(".timer__label-days");
+				days.querySelector(".timer__value").innerHTML = ("0" + t.days).slice(
+					-2
+				);
+				hours.querySelector(".timer__value").innerHTML = (
+					"0" + t.hours
+				).slice(-2);
+				minutes.querySelector(".timer__value").innerHTML = (
+					"0" + t.minutes
+				).slice(-2);
+				// Adds a leading 0 to maintain spacing
+				seconds.querySelector(".timer__value").innerHTML = (
+					"0" + t.seconds
+				).slice(-2);
+				// sklonovani
+				den.innerHTML = t.days >= 5 ? "dní" : t.days == 1 ? "den" : "dni";
+				// If the timer is at zero
+				if (t.total <= 0) {
+					// Stop the timer
+					clearInterval(timeinterval);
+					// Zero out the timer
+					days.querySelector(".timer__value").innerHTML = 0;
+					hours.querySelector(".timer__value").innerHTML = 0;
+					minutes.querySelector(".timer__value").innerHTML = 0;
+					seconds.querySelector(".timer__value").innerHTML = 0;
+				} // if 0
+			};
+			Timer.start = function(obj) {
+				var timer = obj.timer;
+				var endtime = obj.endtime;
+				if (timer) {
+					// Run the function once to avoid a delayed start
+					this.updateClock(endtime);
+					// Set up the time interval to tick the clock down
+					var timeinterval = setInterval(function() {
+						Timer.updateClock(endtime);
+					}, 1000);
+				} // timer
+			};
+		})();
+		let countDown = document.getElementById("timer");
+		if (countDown) {
+			(function() {
+				Timer.start({
+					timer: document.getElementById("js-timer"),
+					endtime: document
+						.getElementById("js-timer")
+						.getAttribute("data-endtime"),
+				});
+			})();
+		}
+	</script>
+</head>
+
+<body>
+	<div class="base">
+		<div id="hockey_bar_esports" data-idTeam="OLO" data-googleSearch="" data-competition="extraliga"></div>
+		<header class="header">
+			<div class="header__top">
+				<div class="container">
+					<div class="header__top-inner">
+						<ul class="social">
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15 0C6.716 0 0 6.744 0 15.063c0 7.46 5.408 13.64 12.498 14.836V18.205H8.88v-4.208h3.618v-3.103c0-3.6 2.19-5.562 5.39-5.562 1.531 0 2.848.114 3.23.165V9.26l-2.219.001c-1.739 0-2.074.83-2.074 2.048v2.686h4.15l-.542 4.208h-3.608V30C24.246 29.093 30 22.756 30 15.059 30 6.744 23.284 0 15 0z" fill="#ffff" />
+									</svg> </a>
+							</li>
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 6.717 6.717 0 15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15zm21.859-2.86c0-.149-.004-.297-.01-.445a6.994 6.994 0 001.717-1.783 6.866 6.866 0 01-1.977.543 3.456 3.456 0 001.514-1.905 6.906 6.906 0 01-2.186.836 3.444 3.444 0 00-5.867 3.14 9.775 9.775 0 01-7.097-3.598 3.44 3.44 0 001.066 4.596 3.419 3.419 0 01-1.56-.43v.044a3.444 3.444 0 002.762 3.375 3.442 3.442 0 01-1.555.06 3.447 3.447 0 003.217 2.39 6.908 6.908 0 01-4.276 1.474 6.98 6.98 0 01-.822-.047 9.746 9.746 0 005.278 1.546c6.333 0 9.796-5.246 9.796-9.796z" fill="#fff" />
+									</svg> </a>
+							</li>
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path d="M17.871 15a2.871 2.871 0 11-5.742 0 2.871 2.871 0 015.742 0z" fill="#fff" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M21.714 9.92a2.669 2.669 0 00-.644-.99 2.666 2.666 0 00-.99-.644c-.304-.118-.76-.259-1.6-.297-.908-.041-1.18-.05-3.48-.05s-2.572.008-3.48.05c-.84.038-1.297.179-1.6.297a2.665 2.665 0 00-.99.644 2.67 2.67 0 00-.645.99c-.118.304-.258.76-.296 1.6-.042.908-.05 1.18-.05 3.48s.008 2.572.05 3.48c.038.84.178 1.297.296 1.6.138.374.358.713.645.99.277.287.616.507.99.645.303.118.76.258 1.6.296.908.042 1.18.05 3.48.05s2.572-.008 3.48-.05c.84-.038 1.296-.178 1.6-.296a2.852 2.852 0 001.634-1.635c.118-.303.259-.76.297-1.6.041-.908.05-1.18.05-3.48s-.009-2.572-.05-3.48c-.038-.84-.178-1.296-.297-1.6zM15 19.423a4.423 4.423 0 110-8.846 4.423 4.423 0 010 8.846zm3.564-9.02a1.034 1.034 0 102.067 0 1.034 1.034 0 00-2.067 0z" fill="#ffff" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 6.717 6.717 0 15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15zm23.161 5.642c.213-.548.359-1.174.4-2.09.042-.92.052-1.213.052-3.552 0-2.34-.01-2.633-.051-3.551-.042-.917-.188-1.543-.401-2.09a4.222 4.222 0 00-.993-1.526 4.222 4.222 0 00-1.526-.994c-.548-.213-1.174-.358-2.09-.4-.92-.042-1.213-.052-3.552-.052-2.34 0-2.633.01-3.551.052-.917.042-1.543.187-2.09.4a4.219 4.219 0 00-1.526.994 4.22 4.22 0 00-.994 1.525c-.213.548-.359 1.174-.4 2.09-.042.92-.052 1.213-.052 3.552 0 2.34.01 2.633.052 3.551.042.917.187 1.543.4 2.09a4.22 4.22 0 00.994 1.526c.43.439.95.778 1.525.994.548.213 1.174.358 2.09.4.92.042 1.213.052 3.552.052 2.34 0 2.633-.01 3.551-.052.917-.042 1.543-.187 2.09-.4a4.404 4.404 0 002.52-2.52z" fill="#fff" />
+									</svg> </a>
+							</li>
+							<li class="social__item">
+								<a target="_blank" class="social__link " href="#">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="#ed1f24" xmlns="http://www.w3.org/2000/svg">
+										<path d="M13.132 17.81l4.88-2.81-4.88-2.81v5.62z" fill="#fff" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 6.717 6.717 0 15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15zm23.987 4.524c.386-1.467.386-4.509.386-4.509s.015-3.057-.386-4.524a2.349 2.349 0 00-1.652-1.652C20.867 8.437 15 8.437 15 8.437s-5.868 0-7.335.387a2.396 2.396 0 00-1.652 1.667C5.627 11.958 5.627 15 5.627 15s0 3.057.386 4.509a2.35 2.35 0 001.652 1.652c1.483.401 7.335.401 7.335.401s5.868 0 7.334-.386a2.349 2.349 0 001.653-1.652z" fill="#fff" />
+									</svg> </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header__bottom">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg">
+						<a class="logo" href="">
+							<img src="images/content/logo.png" loading="lazy" alt="logo" />
+						</a>
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+							<ul class="navbar-nav navbar-nav--left">
+								<a href="#" class="header__partner">
+									<img src="images/content/198.png" loading="lazy" alt="logo" />
+								</a>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="klub" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Klub
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="klub">
+										<li><a class="dropdown-item" href="#">Historie</a></li>
+										<li><a class="dropdown-item" href="#">Úspěchy</a></li>
+										<li><a class="dropdown-item" href="#">Reprezentace</a></li>
+										<li><a class="dropdown-item" href="#">Kontakty</a></li>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="a-tym" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										A-tým
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="a-tym">
+										<li><a class="dropdown-item" href="#">Soupiska</a></li>
+										<li><a class="dropdown-item" href="#">Realizační tým</a></li>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="zapasy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Zápasy
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="zapasy">
+										<li><a class="dropdown-item" href="#">TELH</a></li>
+										<li><a class="dropdown-item" href="#">Přípravné zápasy</a></li>
+										<li><a class="dropdown-item" href="#">Tabulka TELH</a></li>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="mladez" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Mládež
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="mladez">
+										<li><a class="dropdown-item" href="#">Juniorky U19</a></li>
+										<li><a class="dropdown-item" href="#">Kadetky U17</a></li>
+										<li><a class="dropdown-item" href="#">U15</a></li>
+										<li><a class="dropdown-item" href="#">U14</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U13</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U12</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U11</a></li>
+										<li><a class="dropdown-item" href="#">Minižákyně U10</a></li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Partneři </a>
+								</li>
+							</ul>
+							<div class="navbar-nav__logo">
+								<a class="header__logo" href="">
+									<img src="images/content/logo.png" loading="lazy" alt="logo" />
+								</a>
+							</div>
+							<ul class="navbar-nav navbar-nav--right">
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Vstupenky </a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Stadion </a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Ledová plocha </a>
+								</li>
+
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="fanzona" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Fanzóna
+									</a>
+									<ul class="dropdown-menu" aria-labelledby="fanzona">
+										<li><a class="dropdown-item" href="#">Fanlub</a></li>
+										<li><a class="dropdown-item" href="#">Ptejte se</a></li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"> Archiv </a>
+								</li>
+							</ul>
+						</div>
+						<a class="navbar-search" href="#">
+							<img src="images/ico/search.svg" loading="lazy" alt="search" />
+						</a>
+						<button class="c-header__opener js-header__opener" type="button">
+							<span></span>
+						</button>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main" aria-label="Hlavní obsah">
+			<section class="c-forum-section pt-lg-10 pt-4 mb-10">
+				<div class="container">
+					<!-- <div id="forum_subpage">
+      <script type="text/javascript">
+        function button() {
+          if (
+            document.getElementById("button_register").className == "hidden"
+          ) {
+            document.getElementById("button_register").className = "submit";
+          } else {
+            document.getElementById("button_register").className = "hidden";
+          }
+        }
+        function validate_registrace_forum(formular) {
+          if (formular.nick.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Uživatelské jméno'");
+            formular.nick.focus();
+            return false;
+          }
+          if (formular.heslo.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Heslo'");
+            formular.heslo.focus();
+            return false;
+          }
+          if (formular.heslo2.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'potvrdit heslo'");
+            formular.heslo2.focus();
+            return false;
+          }
+          if (formular.heslo.value != formular.heslo2.value) {
+            alert("CHYBA: zadaná hesla se musí shodovat");
+            formular.heslo.focus();
+            return false;
+          }
+          if (formular.email.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Email'");
+            formular.email.focus();
+            return false;
+          }
+          if (formular.id_klub.value == "0") {
+            alert("CHYBA: musíte vyplnit políčko 'Klub'");
+            return false;
+          }
+          if (formular.strCAPTCHA.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Bezp. kód'");
+            formular.strCAPTCHA.focus();
+            return false;
+          }
+          if (
+            (formular.email.value != "") &
+            (formular.email.value.indexOf("@") < 1 ||
+              formular.email.value.indexOf("@") !=
+                formular.email.value.lastIndexOf("@") ||
+              formular.email.value.lastIndexOf(".") <
+                formular.email.value.lastIndexOf("@") + 2 ||
+              formular.email.value.lastIndexOf(".") >
+                formular.email.value.length - 3 ||
+              formular.email.value.lastIndexOf(".") <
+                formular.email.value.length - 5)
+          ) {
+            alert("CHYBA: nezadal jste 'email' ve správném tvaru");
+            formular.email.focus();
+            return false;
+          }
+        }
+      </script>
+
+      <div class="menicko center">
+        Pokud po registraci neobdržíte potvrzující email, nebo se rozhodnete
+        registraci změnit, použijte prosím<br /><a
+          href="forum_action.asp?action=login_user"
+          class="bold"
+          >EDITACI REGISTROVANÝCH UŽIVATELŮ</a
+        >
+      </div>
+      <form
+        action="forum_action.asp"
+        method="post"
+        onsubmit="return validate_registrace_forum(this)"
+      >
+        <fieldset>
+          <legend>Registrace do diskusního fóra</legend>
+          <div class="space">&nbsp;</div>
+          <div class="space">&nbsp;</div>
+          <table class="nice table" cellspacing="2" cellpadding="2">
+            <tr>
+              <td class="right item">
+                <label for="nick"
+                  ><strong>Uživatelské jméno:&nbsp;*</strong></label
+                >
+              </td>
+              <td>
+                <input type="text" value="1" name="nick" required />
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="heslo"><strong>Heslo:&nbsp;*</strong></label>
+              </td>
+              <td><input type="password" name="heslo" required /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="heslo2"
+                  ><strong>potvrdit heslo:&nbsp;*</strong></label
+                >
+              </td>
+              <td><input type="password" name="heslo2" required /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="email"><strong>Email:&nbsp;*</strong></label>
+              </td>
+              <td>
+                <input type="text" value="123@mail.cz" name="email" required />
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="klub"
+                  ><strong>Preferovaný klub:&nbsp;*</strong></label
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="mesto">Mobil:</label>
+              </td>
+              <td>
+                <input type="text" value=" 420333333333" name="mobil" />
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="jmeno">Jméno:</label>
+              </td>
+              <td><input type="text" value="11" name="jmeno" /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="prijmeni">Příjmení:</label>
+              </td>
+              <td><input type="text" value="11" name="prijmeni" /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="mesto">Město:</label>
+              </td>
+              <td><input type="text" value="11" name="mesto" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="center">
+                <div class="space">&nbsp;</div>
+                <div class="left bold big">
+                  <strong>Registrační podmínky</strong>
+                </div>
+                <div class="space">&nbsp;</div>
+
+               
+                <div class="menicko">
+                  Opište kód z obrázku&nbsp;<input
+                    type="text"
+                    name="strCAPTCHA"
+                    id="strCAPTCHA"
+                    maxlength="10"
+                    class="captcha"
+                  />&nbsp;&nbsp;<img
+                    src="forum_captcha.asp"
+                    alt=""
+                    width="86"
+                    height="21"
+                  />
+                </div>
+                <input
+                  type="submit"
+                  value="Registrovat"
+                  id="button_register"
+                  class="hidden"
+                />
+                <input type="hidden" name="action" value="registration_add" />
+                <div class="space">&nbsp;</div>
+              </td>
+            </tr>
+          </table>
+          <div class="space">&nbsp;</div>
+        </fieldset>
+      </form>
+      <div class="space">&nbsp;</div>
+    </div> -->
+					<div class="row g-8">
+						<div class="col-xl-9">
+							<div class="main-col">
+								<div class="header-section">
+									<h1 class="h1 text-uppercase text-primary mb-4">Registrace</h1>
+								</div>
+								<div class="o-content mb-10">
+									<p>
+										Registrace budou platné pro všechna diskusní fóra s registrací na
+										webech eSports.cz. Pokud již máte registraci z jiného webu
+										eSports.cz, tak platí i zde.
+									</p>
+									<p>
+										<strong>Základní registrace</strong> uživatelského jména je
+										zdarma, stačí jen jedno potvrzení odkazu ve zprávě, která vám po
+										registraci přijde na vaši emailovou adresu. Pokud se chcete stát
+										<strong>"profi" uživatelem</strong> a využívat tak některé výhody
+										a rozšířené funkce diskusního fóra, pak se po úspěšné registraci
+										přihlásíte do editace uživatele (odkaz v dolní části diskusního
+										fóra) a zašlete jedinou SMS zprávu podle pokynů.
+									</p>
+									<p>
+										Zadané údaje slouží pouze pro potřeby registrace a nebudou nikde
+										zveřejňovány.
+									</p>
+									<p>
+										Registrace, která bude více než <strong>2 roky neaktivní</strong>,
+										bude <strong>smazána</strong>
+									</p>
+									<h4>Při registraci si prosím dejte pozor ná následující:</h4>
+									<ul>
+										<li>
+											<strong>uživatelské jméno</strong> nesmí obsahovat mezeru (místo
+											ní zkuste podtržítko), zavináč a křížek #
+										</li>
+										<li>
+											jedna emailová adresa může být použita
+											<strong>pouze pro jedno uživatelské jméno</strong>
+										</li>
+										<li>
+											pozor na mezery, diakritiku, čárky a jiné překlepy v
+											<strong>emailové adrese!</strong>
+										</li>
+										<li>
+											pozor, aby email s potvrzovacím odkazem neskončil ve vaší
+											schránce v koši se <strong>spamem</strong>, v případě nastavení
+											přísných pravidel vaší email. schránky
+										</li>
+									</ul>
+									<p class="text-center mt-8 d-block">
+										Pokud po registraci neobdržíte potvrzující email, nebo se
+										rozhodnete registraci změnit, použijte prosím
+										<a class="text-primary fw-bold d-block" href="#">EDITACI REGISTROVANÝCH UŽIVATELŮ
+										</a>
+									</p>
+								</div>
+								<form action="/inc/ajax-forum-signin.php" method="post" class="c-forum__box">
+									<div class="row">
+										<div class="col-lg-6">
+											<label for="username">
+												Uživatelské jméno*
+												<input type="text" name="username" id="username" required />
+											</label>
+										</div>
+										<div class="col-lg-6">
+											<label for="password">
+												Heslo*
+												<input type="password" name="password" id="password" required />
+											</label>
+										</div>
+										<div class="col-lg-6">
+											<label for="password_verify">
+												Potvrdit heslo*
+												<input type="password" name="password_verify" id="password_verify" required />
+											</label>
+										</div>
+										<div class="col-lg-6">
+											<label for="email">
+												Email*
+												<input type="email" name="email" id="email" required />
+											</label>
+										</div>
+										<div class="col-lg-6">
+											<label for="phone">
+												Mobil
+												<input type="text" name="phone" id="phone" />
+											</label>
+										</div>
+										<div class="col-lg-6">
+											<label for="name">
+												Jméno
+												<input type="text" name="name" id="name" />
+											</label>
+										</div>
+										<div class="col-lg-6">
+											<label for="surname">
+												Přijmení
+												<input type="text" name="surname" id="surname" />
+											</label>
+										</div>
+										<div class="col-lg-6">
+											<label for="city">
+												Město
+												<input type="text" name="city" id="city" />
+											</label>
+										</div>
+									</div>
+									<div class="c-forum__agreement">
+										<input id="agreement" type="checkbox" class="souhlas" name="souhlas" value="1" />
+										<label for="agreement">
+											<strong>Souhlasím s</strong>
+											<a href="#" class="text-primary"> podmínkami</a>
+										</label>
+									</div>
+									<button type="submit" class="tag tag--primary">
+										<strong>Odeslat</strong>
+									</button>
+								</form>
+
+								<hr />
+
+								<ul class="c-forum__links">
+									<li><a class="text-primary" href="/forum">Zpět na fórum</a></li>
+								</ul>
+							</div>
+						</div>
+						<aside class="aside col-xl-3">
+							<div class="mb-4">
+								<a class="post" href="/article/7408-Juniori-budou-hrat-nejvyssi-soutez-take-v-pristi-sezone">
+									<div class="post__img">
+										<img src="/image?file=https://hc-olomouc.cz/foto/jun_olomouc_-_mlada_boleslav_/DSC_0349.JPG&w=660&h=530&exact=1&topcut=0&format=jpg" loading="lazy" alt="" />
+									</div>
+									<div class="post__info">
+										<h4 class="h4">
+											Junioři budou hrát nejvyšší soutěž také v příští sezóně
+										</h4>
+										<span class="text-primary">19. 4. 2023</span>
+									</div>
+								</a>
+							</div>
+							<div class="mb-4">
+								<a class="post" href="/article/7407-Pokracuji-v-Olomouci-Jakub-Orsava-a-David-Skurek">
+									<div class="post__img">
+										<img src="/image?file=https://hc-olomouc.cz/foto/skůrekorsava.jpg&w=660&h=530&exact=1&topcut=0&format=jpg" loading="lazy" alt="" />
+									</div>
+									<div class="post__info">
+										<h4 class="h4">
+											Pokračují v Olomouci: Jakub Orsava a David Škůrek
+										</h4>
+										<span class="text-primary">18. 4. 2023</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+
+			<script async src="/dist/js/forum.js"></script>
+
+			<div class="pub pub--bottom">
+				<div class="container">
+					<div class="row gx-lg-8 gy-4 g-4">
+						<div class="col-xl-3 col-md-6">
+							<a href="http://www.olomouc.eu/" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/7.jpg?1682082036" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="http://www.kr-olomoucky.cz/" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/1.gif?1663789083" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="http://https://www.selm-morava.cz/" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/182.png?1663789081" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="https://www.galeriesantovka.cz" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/189.png?1663789093" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="https://www.rsre.cz" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/200.png?1682082297" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="https://www.mora.cz" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/198.png?1682082049" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="http://www.insta.cz/" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/14.png?1674733160" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="http://tecam.cz/" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/134.png?1674733158" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="www.vhs-ol.cz" target="_blank">
+								<img src="https://hc-olomouc.cz/ads/db_partners/logos/23.jpg?1674733146" loading="lazy" width="316" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pub pub--bottom">
+				<div class="container">
+					<div class="row gx-lg-8 gy-4 g-4">
+						<div class="col-xl-3 col-md-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-3 col-md-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/316x112" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-2 col-md-4 col-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-2 col-md-4 col-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-2 col-md-4 col-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-2 col-md-4 col-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-2 col-md-4 col-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+							</a>
+						</div>
+						<div class="col-xl-2 col-md-4 col-6">
+							<a href="#">
+								<img src="https://via.placeholder.com/200x70" loading="lazy" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<a class="footer__logo" href="">
+				<img src="images/content/logo.png" loading="lazy" alt="logo" />
+			</a>
+			<div class="container">
+				<div class="footer__inner">
+					<p class="p2">
+						<strong>
+							Copyright © 2010-2021 HC OLOMOUC, s.r.o. &
+							<a href="https://esportsmedia.cz/">eSports.cz, s.r.o</a>
+						</strong>
+					</p>
+					<ul class="footer__links">
+						<li>
+							<a href="#">Informace o autorských právech </a>
+						</li>
+						|
+						<li>
+							<a href="#">RSS</a>
+						</li>
+						|
+						<li>
+							<a href="#">Kontakt</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://vesna.esports.cz/weby_data/top_bar/top_bar_elh_utf8.js"></script>
+	<script defer src="js/scripts.js"></script>
+</body>
+
+</html>

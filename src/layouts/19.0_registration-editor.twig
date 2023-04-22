@@ -1,0 +1,200 @@
+{% extends "@components/base/base.twig" %} {% set title =
+"19.0_registration-editor" %} {% block main %}
+
+<section class="c-forum-section pt-lg-10 pt-4 mb-10">
+  <div class="container">
+    <div class="row g-8">
+      <div class="col-xl-9">
+        <div class="main-col">
+          <div class="header-section">
+            <h1 class="h1 text-uppercase text-primary mb-4">Přihlášení</h1>
+          </div>
+          <div class="o-content mb-10">
+            <p>
+              Pro úpravu registrace se musíte nejprve přihlásit. Zadejte Vaše
+              uživatelské jméno a heslo, které jste zadali při registraci.
+            </p>
+          </div>
+          <form
+            action="/inc/ajax-forum-signin.php"
+            method="post"
+            class="c-forum__box"
+          >
+            <div class="row">
+              <div class="col-lg-6">
+                <label for="username">
+                  Uživatelské jméno*
+                  <input type="text" name="username" id="username" required />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="password">
+                  Heslo*
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    required
+                  />
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="tag tag--primary">
+              <strong>Přihlásit</strong>
+            </button>
+          </form>
+
+          <hr />
+
+          <ul class="c-forum__links">
+            <li><a class="text-primary" href="/forum">Zpět na fórum</a></li>
+          </ul>
+        </div>
+      </div>
+      <aside class="aside col-xl-3">
+        <div class="mb-4">
+          <a
+            class="post"
+            href="/article/7408-Juniori-budou-hrat-nejvyssi-soutez-take-v-pristi-sezone"
+          >
+            <div class="post__img">
+              <img
+                src="/image?file=https://hc-olomouc.cz/foto/jun_olomouc_-_mlada_boleslav_/DSC_0349.JPG&w=660&h=530&exact=1&topcut=0&format=jpg"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="post__info">
+              <h4 class="h4">
+                Junioři budou hrát nejvyšší soutěž také v příští sezóně
+              </h4>
+              <span class="text-primary">19. 4. 2023</span>
+            </div>
+          </a>
+        </div>
+        <div class="mb-4">
+          <a
+            class="post"
+            href="/article/7407-Pokracuji-v-Olomouci-Jakub-Orsava-a-David-Skurek"
+          >
+            <div class="post__img">
+              <img
+                src="/image?file=https://hc-olomouc.cz/foto/skůrekorsava.jpg&w=660&h=530&exact=1&topcut=0&format=jpg"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="post__info">
+              <h4 class="h4">
+                Pokračují v Olomouci: Jakub Orsava a David Škůrek
+              </h4>
+              <span class="text-primary">18. 4. 2023</span>
+            </div>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script async src="/dist/js/forum.js"></script>
+
+<div class="pub pub--bottom">
+  <div class="container">
+    <div class="row gx-lg-8 gy-4 g-4">
+      <div class="col-xl-3 col-md-6">
+        <a href="http://www.olomouc.eu/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/7.jpg?1682082036"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://www.kr-olomoucky.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/1.gif?1663789083"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://https://www.selm-morava.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/182.png?1663789081"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="https://www.galeriesantovka.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/189.png?1663789093"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="https://www.rsre.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/200.png?1682082297"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="https://www.mora.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/198.png?1682082049"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://www.insta.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/14.png?1674733160"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://tecam.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/134.png?1674733158"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="www.vhs-ol.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/23.jpg?1674733146"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "@components/pubs/pubs-bottom.twig" %} {% endblock %}

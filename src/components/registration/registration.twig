@@ -1,0 +1,480 @@
+<section class="c-forum-section pt-lg-10 pt-4 mb-10">
+  <div class="container">
+    <!-- <div id="forum_subpage">
+      <script type="text/javascript">
+        function button() {
+          if (
+            document.getElementById("button_register").className == "hidden"
+          ) {
+            document.getElementById("button_register").className = "submit";
+          } else {
+            document.getElementById("button_register").className = "hidden";
+          }
+        }
+        function validate_registrace_forum(formular) {
+          if (formular.nick.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Uživatelské jméno'");
+            formular.nick.focus();
+            return false;
+          }
+          if (formular.heslo.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Heslo'");
+            formular.heslo.focus();
+            return false;
+          }
+          if (formular.heslo2.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'potvrdit heslo'");
+            formular.heslo2.focus();
+            return false;
+          }
+          if (formular.heslo.value != formular.heslo2.value) {
+            alert("CHYBA: zadaná hesla se musí shodovat");
+            formular.heslo.focus();
+            return false;
+          }
+          if (formular.email.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Email'");
+            formular.email.focus();
+            return false;
+          }
+          if (formular.id_klub.value == "0") {
+            alert("CHYBA: musíte vyplnit políčko 'Klub'");
+            return false;
+          }
+          if (formular.strCAPTCHA.value == "") {
+            alert("CHYBA: musíte vyplnit políčko 'Bezp. kód'");
+            formular.strCAPTCHA.focus();
+            return false;
+          }
+          if (
+            (formular.email.value != "") &
+            (formular.email.value.indexOf("@") < 1 ||
+              formular.email.value.indexOf("@") !=
+                formular.email.value.lastIndexOf("@") ||
+              formular.email.value.lastIndexOf(".") <
+                formular.email.value.lastIndexOf("@") + 2 ||
+              formular.email.value.lastIndexOf(".") >
+                formular.email.value.length - 3 ||
+              formular.email.value.lastIndexOf(".") <
+                formular.email.value.length - 5)
+          ) {
+            alert("CHYBA: nezadal jste 'email' ve správném tvaru");
+            formular.email.focus();
+            return false;
+          }
+        }
+      </script>
+
+      <div class="menicko center">
+        Pokud po registraci neobdržíte potvrzující email, nebo se rozhodnete
+        registraci změnit, použijte prosím<br /><a
+          href="forum_action.asp?action=login_user"
+          class="bold"
+          >EDITACI REGISTROVANÝCH UŽIVATELŮ</a
+        >
+      </div>
+      <form
+        action="forum_action.asp"
+        method="post"
+        onsubmit="return validate_registrace_forum(this)"
+      >
+        <fieldset>
+          <legend>Registrace do diskusního fóra</legend>
+          <div class="space">&nbsp;</div>
+          <div class="space">&nbsp;</div>
+          <table class="nice table" cellspacing="2" cellpadding="2">
+            <tr>
+              <td class="right item">
+                <label for="nick"
+                  ><strong>Uživatelské jméno:&nbsp;*</strong></label
+                >
+              </td>
+              <td>
+                <input type="text" value="1" name="nick" required />
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="heslo"><strong>Heslo:&nbsp;*</strong></label>
+              </td>
+              <td><input type="password" name="heslo" required /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="heslo2"
+                  ><strong>potvrdit heslo:&nbsp;*</strong></label
+                >
+              </td>
+              <td><input type="password" name="heslo2" required /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="email"><strong>Email:&nbsp;*</strong></label>
+              </td>
+              <td>
+                <input type="text" value="123@mail.cz" name="email" required />
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="klub"
+                  ><strong>Preferovaný klub:&nbsp;*</strong></label
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="mesto">Mobil:</label>
+              </td>
+              <td>
+                <input type="text" value=" 420333333333" name="mobil" />
+              </td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="jmeno">Jméno:</label>
+              </td>
+              <td><input type="text" value="11" name="jmeno" /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="prijmeni">Příjmení:</label>
+              </td>
+              <td><input type="text" value="11" name="prijmeni" /></td>
+            </tr>
+            <tr>
+              <td class="right item">
+                <label for="mesto">Město:</label>
+              </td>
+              <td><input type="text" value="11" name="mesto" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="center">
+                <div class="space">&nbsp;</div>
+                <div class="left bold big">
+                  <strong>Registrační podmínky</strong>
+                </div>
+                <div class="space">&nbsp;</div>
+
+               
+                <div class="menicko">
+                  Opište kód z obrázku&nbsp;<input
+                    type="text"
+                    name="strCAPTCHA"
+                    id="strCAPTCHA"
+                    maxlength="10"
+                    class="captcha"
+                  />&nbsp;&nbsp;<img
+                    src="forum_captcha.asp"
+                    alt=""
+                    width="86"
+                    height="21"
+                  />
+                </div>
+                <input
+                  type="submit"
+                  value="Registrovat"
+                  id="button_register"
+                  class="hidden"
+                />
+                <input type="hidden" name="action" value="registration_add" />
+                <div class="space">&nbsp;</div>
+              </td>
+            </tr>
+          </table>
+          <div class="space">&nbsp;</div>
+        </fieldset>
+      </form>
+      <div class="space">&nbsp;</div>
+    </div> -->
+    <div class="row g-8">
+      <div class="col-xl-9">
+        <div class="main-col">
+          <div class="header-section">
+            <h1 class="h1 text-uppercase text-primary mb-4">Registrace</h1>
+          </div>
+          <div class="o-content mb-10">
+            <p>
+              Registrace budou platné pro všechna diskusní fóra s registrací na
+              webech eSports.cz. Pokud již máte registraci z jiného webu
+              eSports.cz, tak platí i zde.
+            </p>
+            <p>
+              <strong>Základní registrace</strong> uživatelského jména je
+              zdarma, stačí jen jedno potvrzení odkazu ve zprávě, která vám po
+              registraci přijde na vaši emailovou adresu. Pokud se chcete stát
+              <strong>"profi" uživatelem</strong> a využívat tak některé výhody
+              a rozšířené funkce diskusního fóra, pak se po úspěšné registraci
+              přihlásíte do editace uživatele (odkaz v dolní části diskusního
+              fóra) a zašlete jedinou SMS zprávu podle pokynů.
+            </p>
+            <p>
+              Zadané údaje slouží pouze pro potřeby registrace a nebudou nikde
+              zveřejňovány.
+            </p>
+            <p>
+              Registrace, která bude více než <strong>2 roky neaktivní</strong>,
+              bude <strong>smazána</strong>
+            </p>
+            <h4>Při registraci si prosím dejte pozor ná následující:</h4>
+            <ul>
+              <li>
+                <strong>uživatelské jméno</strong> nesmí obsahovat mezeru (místo
+                ní zkuste podtržítko), zavináč a křížek #
+              </li>
+              <li>
+                jedna emailová adresa může být použita
+                <strong>pouze pro jedno uživatelské jméno</strong>
+              </li>
+              <li>
+                pozor na mezery, diakritiku, čárky a jiné překlepy v
+                <strong>emailové adrese!</strong>
+              </li>
+              <li>
+                pozor, aby email s potvrzovacím odkazem neskončil ve vaší
+                schránce v koši se <strong>spamem</strong>, v případě nastavení
+                přísných pravidel vaší email. schránky
+              </li>
+            </ul>
+            <p class="text-center mt-8 d-block">
+              Pokud po registraci neobdržíte potvrzující email, nebo se
+              rozhodnete registraci změnit, použijte prosím
+              <a class="text-primary fw-bold d-block" href="#"
+                >EDITACI REGISTROVANÝCH UŽIVATELŮ
+              </a>
+            </p>
+          </div>
+          <form
+            action="/inc/ajax-forum-signin.php"
+            method="post"
+            class="c-forum__box"
+          >
+            <div class="row">
+              <div class="col-lg-6">
+                <label for="username">
+                  Uživatelské jméno*
+                  <input type="text" name="username" id="username" required />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="password">
+                  Heslo*
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    required
+                  />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="password_verify">
+                  Potvrdit heslo*
+                  <input
+                    type="password"
+                    name="password_verify"
+                    id="password_verify"
+                    required
+                  />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="email">
+                  Email*
+                  <input type="email" name="email" id="email" required />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="phone">
+                  Mobil
+                  <input type="text" name="phone" id="phone" />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="name">
+                  Jméno
+                  <input type="text" name="name" id="name" />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="surname">
+                  Přijmení
+                  <input type="text" name="surname" id="surname" />
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <label for="city">
+                  Město
+                  <input type="text" name="city" id="city" />
+                </label>
+              </div>
+            </div>
+            <div class="c-forum__agreement">
+              <input
+                id="agreement"
+                type="checkbox"
+                class="souhlas"
+                name="souhlas"
+                value="1"
+              />
+              <label for="agreement">
+                <strong>Souhlasím s</strong>
+                <a href="#" class="text-primary"> podmínkami</a>
+              </label>
+            </div>
+            <button type="submit" class="tag tag--primary">
+              <strong>Odeslat</strong>
+            </button>
+          </form>
+
+          <hr />
+
+          <ul class="c-forum__links">
+            <li><a class="text-primary" href="/forum">Zpět na fórum</a></li>
+          </ul>
+        </div>
+      </div>
+      <aside class="aside col-xl-3">
+        <div class="mb-4">
+          <a
+            class="post"
+            href="/article/7408-Juniori-budou-hrat-nejvyssi-soutez-take-v-pristi-sezone"
+          >
+            <div class="post__img">
+              <img
+                src="/image?file=https://hc-olomouc.cz/foto/jun_olomouc_-_mlada_boleslav_/DSC_0349.JPG&w=660&h=530&exact=1&topcut=0&format=jpg"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="post__info">
+              <h4 class="h4">
+                Junioři budou hrát nejvyšší soutěž také v příští sezóně
+              </h4>
+              <span class="text-primary">19. 4. 2023</span>
+            </div>
+          </a>
+        </div>
+        <div class="mb-4">
+          <a
+            class="post"
+            href="/article/7407-Pokracuji-v-Olomouci-Jakub-Orsava-a-David-Skurek"
+          >
+            <div class="post__img">
+              <img
+                src="/image?file=https://hc-olomouc.cz/foto/skůrekorsava.jpg&w=660&h=530&exact=1&topcut=0&format=jpg"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="post__info">
+              <h4 class="h4">
+                Pokračují v Olomouci: Jakub Orsava a David Škůrek
+              </h4>
+              <span class="text-primary">18. 4. 2023</span>
+            </div>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script async src="/dist/js/forum.js"></script>
+
+<div class="pub pub--bottom">
+  <div class="container">
+    <div class="row gx-lg-8 gy-4 g-4">
+      <div class="col-xl-3 col-md-6">
+        <a href="http://www.olomouc.eu/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/7.jpg?1682082036"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://www.kr-olomoucky.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/1.gif?1663789083"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://https://www.selm-morava.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/182.png?1663789081"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="https://www.galeriesantovka.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/189.png?1663789093"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="https://www.rsre.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/200.png?1682082297"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="https://www.mora.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/198.png?1682082049"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://www.insta.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/14.png?1674733160"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="http://tecam.cz/" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/134.png?1674733158"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <a href="www.vhs-ol.cz" target="_blank">
+          <img
+            src="https://hc-olomouc.cz/ads/db_partners/logos/23.jpg?1674733146"
+            loading="lazy"
+            width="316"
+            alt=""
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

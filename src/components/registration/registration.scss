@@ -1,0 +1,27 @@
+.registration__bottom {
+  margin-top: 40px;
+}
+.c-forum__agreement {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  label {
+    padding: 0;
+    margin: 0;
+  }
+  input[type="checkbox"] {
+    width: 20px;
+    accent-color: var(--color-primary);
+    height: 20px;
+    margin-right: 12px;
+  }
+  strong {
+    margin-right: 6px;
+  }
+}
+.c-forum__box {
+  button {
+    cursor: pointer;
+  }
+}
