@@ -254,7 +254,7 @@
 								<div class="header-section">
 									<h1 class="h1 text-uppercase text-primary mb-4">Diskuzní fórum</h1>
 
-									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="">
+									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="" data-id="999">
 										Přidat příspěvek
 									</button>
 									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
@@ -267,43 +267,117 @@
 												</div>
 												<div class="modal-body">
 													<div class="c-forum__modal">
-														<div id="smiles">
-															<a onclick="insert_smile(':))');"><img src="images/content/forum/06.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(':)');"><img src="images/content/forum/09.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(';)');"><img src="images/content/forum/02.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(':)-');"><img src="images/content/forum/08.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('8)');"><img src="images/content/forum/03.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(':||');"><img src="images/content/forum/07.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(':|');"><img src="images/content/forum/10.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(':(');"><img src="images/content/forum/05.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(':o');"><img src="images/content/forum/01.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile(';(');"><img src="images/content/forum/04.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*1*')"><img src="images/content/forum/11.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*2*')"><img src="images/content/forum/12.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*3*')"><img src="images/content/forum/13.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*4*')"><img src="images/content/forum/14.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*5*')"><img src="images/content/forum/15.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*6*')"><img src="images/content/forum/16.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*7*')"><img src="images/content/forum/17.png" alt="Klikněte pro vložení." /></a>
-															<a onclick="insert_smile('*8*')"><img src="images/content/forum/18.png" alt="Klikněte pro vložení." /></a>
-														</div>
+														<!-- <div id="smiles">
+                        <a onclick="insert_smile(':))');"
+                          ><img
+                            src="images/content/forum/06.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':)');"
+                          ><img
+                            src="images/content/forum/09.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(';)');"
+                          ><img
+                            src="images/content/forum/02.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':)-');"
+                          ><img
+                            src="images/content/forum/08.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('8)');"
+                          ><img
+                            src="images/content/forum/03.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':||');"
+                          ><img
+                            src="images/content/forum/07.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':|');"
+                          ><img
+                            src="images/content/forum/10.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':(');"
+                          ><img
+                            src="images/content/forum/05.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(':o');"
+                          ><img
+                            src="images/content/forum/01.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile(';(');"
+                          ><img
+                            src="images/content/forum/04.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*1*')"
+                          ><img
+                            src="images/content/forum/11.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*2*')"
+                          ><img
+                            src="images/content/forum/12.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*3*')"
+                          ><img
+                            src="images/content/forum/13.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*4*')"
+                          ><img
+                            src="images/content/forum/14.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*5*')"
+                          ><img
+                            src="images/content/forum/15.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*6*')"
+                          ><img
+                            src="images/content/forum/16.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*7*')"
+                          ><img
+                            src="images/content/forum/17.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                        <a onclick="insert_smile('*8*')"
+                          ><img
+                            src="images/content/forum/18.png"
+                            alt="Klikněte pro vložení."
+                        /></a>
+                      </div> -->
 														<p class="c-forum__reaction"></p>
 														<div class="c-forum__box">
-															<textarea name="" id="" cols="30" rows="10"></textarea>
-															<div class="row">
-																<div class="col-lg-6">
-																	<label for="">
-																		Jméno
-																		<input type="text" name="name" />
-																	</label>
+															<form method="post" action="/">
+																<textarea name="" id="" cols="30" rows="10"></textarea>
+																<div class="row">
+																	<div class="col-lg-6">
+																		<label for="">
+																			Jméno
+																			<input type="text" name="name" />
+																		</label>
+																	</div>
+																	<div class="col-lg-6">
+																		<label for="">
+																			Heslo
+																			<input type="password" name="" id="" />
+																		</label>
+																	</div>
 																</div>
-																<div class="col-lg-6">
-																	<label for="">
-																		Heslo
-																		<input type="password" name="" id="" />
-																	</label>
-																</div>
-															</div>
+															</form>
 														</div>
 													</div>
 												</div>
@@ -324,7 +398,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -350,7 +424,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="2 Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="2 Name">
 												Reagovat
 											</button>
 										</div>
@@ -376,7 +450,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="3 Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="3 Name">
 												Reagovat
 											</button>
 										</div>
@@ -402,7 +476,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="4 Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="4 Name">
 												Reagovat
 											</button>
 										</div>
@@ -428,7 +502,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -454,7 +528,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -480,7 +554,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -506,7 +580,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -532,7 +606,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -558,7 +632,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -584,7 +658,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
@@ -610,7 +684,7 @@
 									<div class="c-forum__row">
 										<div class="c-forum__row-left__col">
 											<img class="mx-auto mb-2" src="https://vesna.esports.cz/weby_data/forumy_all/user_smiles/photos/51818.jpg" alt="" />
-											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-whatever="First Name">
+											<button type="button" class="" data-bs-toggle="modal" data-bs-target="#myModal" data-id="" data-whatever="First Name">
 												Reagovat
 											</button>
 										</div>
