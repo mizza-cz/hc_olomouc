@@ -94,6 +94,10 @@
     columns: 4 200px;
     column-gap: 32px;
     width: 100%;
+    display: none;
+    &.tab-active {
+      display: block;
+    }
     @include media-breakpoint-down(md) {
       column-gap: 16px;
     }
@@ -146,4 +150,30 @@
       }
     }
   }
+}
+
+.hp-board__social-tabs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  li {
+    padding: 0 8px;
+    margin-bottom: 8px;
+    a {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .active {
+      color: var(--color-primary);
+      text-decoration-color: transparent;
+    }
+  }
+}
+.hp-board__social-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 8px;
 }

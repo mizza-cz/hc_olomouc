@@ -11,3 +11,4 @@ $(document).ready(function () {
       $(".topstory__content").data("topstory_current", idTopstory);
   });
 });
+
