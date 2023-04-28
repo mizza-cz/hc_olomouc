@@ -136,6 +136,17 @@
 }
 .hp-tabs__matches-col {
   padding: 0 10px;
-  .c-matchboard__item {
+}
+.hp-tabs__juniors {
+  text-align: center;
+  .h2 {
+    span {
+      display: block;
+      font-weight: 400;
+    }
+  }
+  p {
+    font-size: 20px;
+    color: var(--color-red);
   }
 }
