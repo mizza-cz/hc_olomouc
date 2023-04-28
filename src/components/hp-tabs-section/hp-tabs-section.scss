@@ -125,9 +125,17 @@
   }
 }
 
-// .tab-content {
-//   display: none;
-//   &.tab-active {
-//     display: block;
-//   }
-// }
+.hp-tabs__matches {
+  margin-bottom: 60px;
+
+  .c-matchboard__btnnext,
+  .c-matchboard__btnprev {
+    bottom: -48px;
+    padding: 0;
+  }
+}
+.hp-tabs__matches-col {
+  padding: 0 10px;
+  .c-matchboard__item {
+  }
+}
