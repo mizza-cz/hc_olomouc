@@ -126,12 +126,17 @@
 }
 
 .hp-tabs__matches {
-  margin-bottom: 60px;
-
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 60px;
+    background-color: var(--color-light);
+  }
   .c-matchboard__btnnext,
   .c-matchboard__btnprev {
     bottom: -48px;
     padding: 0;
+    @include media-breakpoint-down(sm) {
+      bottom: 16px;
+    }
   }
 }
 .hp-tabs__matches-col {
@@ -148,5 +153,16 @@
   p {
     font-size: 20px;
     color: var(--color-red);
+  }
+}
+.hp-tabs__link {
+  bottom: 0;
+  right: 0;
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 16px;
+  margin-left: auto;
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 0;
   }
 }
