@@ -1,4 +1,4 @@
-let countItem = document.querySelectorAll(".timer");
+let countItem = document.querySelector(".timer");
 if (countItem) {
   parcelRequire = (function (e, r, t, n) {
     var i,

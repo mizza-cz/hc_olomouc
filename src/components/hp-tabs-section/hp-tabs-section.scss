@@ -164,6 +164,12 @@
   margin-left: auto;
   @include media-breakpoint-down(sm) {
     margin-bottom: 0;
-    
   }
+}
+
+.hp-tabs__content {
+  display: none;
+}
+.hp-tabs__content.tab-active {
+  display: block;
 }
