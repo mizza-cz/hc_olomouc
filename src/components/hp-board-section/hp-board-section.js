@@ -1,5 +1,5 @@
 $(".hp-board__social-wrap .hp-board__social-tab").on("click", function (event) {
-  var id = $(this).attr(`"data-id"+tab`);
+  var id = $(this).attr(`data-id`);
   $(".hp-board__social-wrap")
     .find(".hp-board__social")
     .removeClass("tab-active")
@@ -13,5 +13,3 @@ $(".hp-board__social-wrap .hp-board__social-tab").on("click", function (event) {
     .fadeIn();
   return false;
 });
-
- 
