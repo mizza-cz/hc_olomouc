@@ -43,7 +43,14 @@
 .hp-tabs__content {
   // background-color: var(--color-dark-primary);
   padding-top: 32px;
-  padding-bottom: 22px;
+  padding-bottom: 40px;
+  border-bottom: 40px solid var(--color-primary);
+  @include media-breakpoint-down(lg) {
+    border-bottom: 20px solid var(--color-primary);
+  }
+  .c-team-section {
+    margin-bottom: 0;
+  }
 }
 .hp-tabs {
   &__header--respons {
@@ -116,11 +123,13 @@
         font-size: 14px;
       }
       &:hover {
-        background-color: var(--color-light);
+        background-color: var(--color-primary);
+        color: var(--color-light) !important;
       }
     }
     .active {
-      background-color: var(--color-light);
+      background-color: var(--color-primary);
+      color: var(--color-light) !important;
     }
   }
 }
