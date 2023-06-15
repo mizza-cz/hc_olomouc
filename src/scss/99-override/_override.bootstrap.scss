@@ -140,4 +140,11 @@
 .nav-tabs {
   border-bottom: none;
 }
+
+.ml-lg-auto {
+  margin-left: auto;
+  @include media-breakpoint-down(lg) {
+    margin-left: 0;
+  }
+}
 /*! purgecss end ignore */

@@ -1,96 +1,37 @@
 <section class="hp-posts-section">
-  <h3 class="h2 text-primary mb-5">Fotogalerie</h3>
-  <div class="hp-posts__inner">
-    <div class="hp-post__item">
-      <div class="row">
-        <div class="col-lg-4 col-md-5">
-          <a data-gallery="1" data-gallery-id="1" href="#" class="hp-post__img">
-            <img
-              src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg"
-              alt=""
-            />
-          </a>
+  <div class="row g-lg-8 g-4 mb-md-4">
+    <div class="col-lg-6">
+      <h3 class="h2 text-primary mb-4">Fotogalerie</h3>
+      <div class="row g-4">
+        <div class="col-sm-6">
+          {% include "@components/post/post-gallery.twig" %}
         </div>
-        <div class="col-lg-8 col-md-7">
-          <div class="hp-post__content">
-            <a data-gallery="1" data-gallery-id="1" href="#">
-              <h3 class="h3">
-                Všude dobře, doma nejlépe, pronesl útočník David Krejčí
-              </h3>
-            </a>
-            <span class="text-primary">2. 9. 2021</span>
-          </div>
+        <div class="col-sm-6">
+          {% include "@components/post/post-gallery.twig" %}
+        </div>
+        <div class="col-sm-6">
+          {% include "@components/post/post-gallery.twig" %}
+        </div>
+        <div class="col-sm-6">
+          {% include "@components/post/post-gallery.twig" %}
+        </div>
+        <div class="col-12">
+          <a href="#" class="btn">Všechny fotogalerie</a>
         </div>
       </div>
     </div>
-    <div class="hp-post__item">
-      <div class="row">
-        <div class="col-lg-4 col-md-5">
-          <a data-gallery="1" data-gallery-id="1" href="#" class="hp-post__img">
-            <img
-              src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="col-lg-8 col-md-7">
-          <div class="hp-post__content">
-            <a data-gallery="1" data-gallery-id="1" href="#">
-              <h3 class="h3">
-                Všude dobře, doma nejlépe, pronesl útočník David Krejčí
-              </h3>
-            </a>
-            <span class="text-primary">2. 9. 2021</span>
-          </div>
+    <div class="col-lg-6">
+      <h3 class="h2 text-primary mb-4">Články</h3>
+      <div class="row g-4">
+        <div class="col-sm-6">{% include "@components/post/post.twig" %}</div>
+        <div class="col-sm-6">{% include "@components/post/post.twig" %}</div>
+        <div class="col-sm-6">{% include "@components/post/post.twig" %}</div>
+        <div class="col-sm-6">{% include "@components/post/post.twig" %}</div>
+        <div class="col-12">
+          <a href="#" class="btn ml-lg-auto">Další články</a>
         </div>
       </div>
     </div>
   </div>
-  <h3 class="h2 text-primary mb-5">Články</h3>
-  <div class="hp-posts__inner">
-    <div class="hp-post__item">
-      <div class="row">
-        <div class="col-lg-4 col-md-5">
-          <a href="#" class="hp-post__img">
-            <img
-              src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="col-lg-8 col-md-7">
-          <div class="hp-post__content">
-            <a href="#">
-              <h3 class="h3">
-                Všude dobře, doma nejlépe, pronesl útočník David Krejčí
-              </h3>
-            </a>
-            <span class="text-primary">2. 9. 2021</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hp-post__item">
-      <div class="row">
-        <div class="col-lg-4 col-md-5">
-          <a href="#" class="hp-post__img">
-            <img
-              src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="col-lg-8 col-md-7">
-          <div class="hp-post__content">
-            <a href="#">
-              <h3 class="h3">
-                Všude dobře, doma nejlépe, pronesl útočník David Krejčí
-              </h3>
-            </a>
-            <span class="text-primary">2. 9. 2021</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="btns__row"></div>
 </section>

@@ -7,64 +7,9 @@
   .h2 {
     text-transform: uppercase;
   }
-}
-.hp-posts__inner {
-  margin-bottom: 60px;
-  @include media-breakpoint-down(md) {
-    margin-bottom: 40px;
-  }
-}
-.hp-post {
-  &__item {
-    background-color: var(--color-light);
-    box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 32px;
-    @include media-breakpoint-down(md) {
-      background-color: transparent;
-      box-shadow: none;
-    }
-    a {
-      text-decoration-color: transparent;
-      &:hover {
-        text-decoration-color: inherit;
-        img {
-          transform: scale(1.1);
-        }
-      }
-    }
-    .h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
-      @include media-breakpoint-down(md) {
-        font-size: 1.25rem;
-      }
-    }
-  }
-  &__content {
-    padding-top: 20px;
-    @include media-breakpoint-down(md) {
-      padding-top: 16px;
-    }
-
-    span {
-      display: block;
-      font-weight: 700;
-      font-size: 1rem;
-      line-height: 1.25;
-      @include media-breakpoint-down(md) {
-        font-size: 0.75rem;
-      }
-    }
-  }
-  &__img {
-    display: block;
-    aspect-ratio: 240/160;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: all 0.3s;
+  .btn {
+    @include media-breakpoint-down(lg) {
+      margin-left: auto;
     }
   }
 }
