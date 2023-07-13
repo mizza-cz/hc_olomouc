@@ -10,6 +10,7 @@ $(".c-matchboard__slider").slick({
       breakpoint: 1238,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
       },
     },
   ],

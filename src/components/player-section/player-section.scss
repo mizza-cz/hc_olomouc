@@ -1,14 +1,18 @@
 .c-player-section {
   margin-bottom: 40px;
-
+  position: relative;
   .topstory__image {
     @include media-breakpoint-down(lg) {
-      display: none;
+      // display: none;
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      height: 330px;
     }
   }
   .topstory__bcg {
     @include media-breakpoint-down(lg) {
-      display: none;
+      // display: none;
     }
   }
 }
@@ -100,10 +104,15 @@
     @include media-breakpoint-down(xl) {
       margin-bottom: 24px;
     }
+    @include media-breakpoint-down(lg) {
+      z-index: 32;
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      position: relative;
+      z-index: 32;
     }
   }
 }

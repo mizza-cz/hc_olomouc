@@ -23,9 +23,7 @@
   .h4 {
     text-transform: uppercase;
   }
-  @include media-breakpoint-down(xl) {
-    display: none;
-  }
+
   .link {
     display: block;
     width: fit-content;
