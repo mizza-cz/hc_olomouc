@@ -68,6 +68,9 @@
       justify-content: center;
       text-align: center;
     }
+    @include media-breakpoint-down(md) {
+      margin-top: 40px;
+    }
     &-wrap {
       @include media-breakpoint-down(xxl) {
         width: 100%;

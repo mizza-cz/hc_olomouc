@@ -219,7 +219,16 @@
     padding-top: 20px;
   }
 }
-
+.nav-item:focus .nav-link,
+.nav-item:hover .nav-link {
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  @include media-breakpoint-down(xxl) {
+    background-color: transparent;
+    color: var(--color-light);
+    border-bottom: 2px solid var(--color);
+  }
+}
 .nav-item + .nav-item {
   @include media-breakpoint-down(xxl) {
     padding-left: 0;
@@ -238,16 +247,7 @@
     background-color: var(--color-dark);
   }
 }
-.nav-link:focus,
-.nav-link:hover {
-  color: var(--color-primary);
-  background-color: var(--color-light);
-  @include media-breakpoint-down(xxl) {
-    background-color: transparent;
-    color: var(--color-light);
-    border-bottom: 2px solid var(--color);
-  }
-}
+
 .navbar-search {
   width: 16px;
   height: 16px;
