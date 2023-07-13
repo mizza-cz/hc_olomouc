@@ -136,8 +136,11 @@
 
 .hp-tabs__matches {
   @include media-breakpoint-down(sm) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding-bottom: 60px;
-    background-color: var(--color-light);
+    // background-color: var(--color-light);
   }
   .c-matchboard__btnnext,
   .c-matchboard__btnprev {
