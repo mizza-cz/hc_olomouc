@@ -3,7 +3,7 @@
   <div class="aside-box">
     <ul class="aside__menu">
       <li>
-        <a  href="#">Soupiska</a>
+        <a href="#">Soupiska</a>
       </li>
       <li>
         <a href="#">Realizační tým</a>
@@ -16,6 +16,12 @@
       </li>
     </ul>
   </div>
-  <div class="mb-4">{% include "@components/post/post.twig" %}</div>
-  <div class="mb-4">{% include "@components/post/post.twig" %}</div>
+  <div class="row">
+    <div class="mb-4 col-xl-12 col-sm-6">
+      {% include "@components/post/post.twig" %}
+    </div>
+    <div class="mb-4 col-xl-12 col-sm-6">
+      {% include "@components/post/post.twig" %}
+    </div>
+  </div>
 </aside>

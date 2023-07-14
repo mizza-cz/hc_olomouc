@@ -11,8 +11,15 @@
     }
   }
   .topstory__bcg {
+    position: absolute;
+
     @include media-breakpoint-down(lg) {
       // display: none;
+      height: 330px;
+      z-index: 10;
+      top: 0;
+      opacity: 0.8;
+      display: block;
     }
   }
 }

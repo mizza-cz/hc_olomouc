@@ -42,7 +42,13 @@
     </div>
   </div>
   <a href="#" class="btn mb-8 ml-auto">cylý tým</a>
-  <h2 class="h4 text-primary mb-4 pl-6">Články</h2>
-  <div class="mb-4">{% include "@components/post/post.twig" %}</div>
-  <div class="mb-4">{% include "@components/post/post.twig" %}</div>
+  <div class="row">
+    <h2 class="h4 text-primary mb-4 pl-6">Články</h2>
+    <div class="mb-4 col-xl-12 col-sm-6">
+      {% include "@components/post/post.twig" %}
+    </div>
+    <div class="mb-4 col-xl-12 col-sm-6">
+      {% include "@components/post/post.twig" %}
+    </div>
+  </div>
 </aside>
