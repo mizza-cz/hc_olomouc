@@ -112,6 +112,7 @@
       flex-wrap: wrap;
       flex-direction: row;
       .btn {
+        height: fit-content;
         width: auto;
         margin: 0 4px 8px;
       }
@@ -165,6 +166,24 @@
     align-items: center;
     .h3 {
       text-transform: uppercase;
+    }
+  }
+}
+
+.match__partner {
+  max-width: 100px;
+  margin-bottom: 8px;
+  height: 60px;
+  img {
+    object-fit: contain;
+    height: 100%;
+    margin: 0 auto;
+  }
+  @include media-breakpoint-down(xl) {
+    max-width: 100%;
+    width: 100%;
+    img {
+      width: 100px;
     }
   }
 }
