@@ -1,11 +1,20 @@
+#hockey_bar_esports {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+
 .header {
   position: relative;
-  z-index: 99;
-  // position: fixed;
+  z-index: 9999;
+  position: fixed;
   width: 100%;
   transition: all 0.3s;
+  top: 40px;
+  @include media-breakpoint-down(md) {
+    top: 0;
+  }
   &.fixed {
-    position: fixed;
     top: 0;
   }
   &-slider {
