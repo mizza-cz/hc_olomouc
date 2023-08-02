@@ -3,7 +3,12 @@
   z-index: 99;
   width: 100%;
 }
-
+.header-slider.header-slider--mob {
+  display: none;
+  @include media-breakpoint-down(xxl) {
+    display: block;
+  }
+}
 .header {
   position: relative;
   z-index: 9999;
@@ -22,6 +27,7 @@
     height: 100%;
     @include media-breakpoint-down(xxl) {
       display: none;
+      width: 110px;
     }
   }
   .slick-slider .slick-list,
@@ -112,6 +118,7 @@
   text-transform: uppercase;
   margin-left: auto;
   margin-right: 8px;
+  z-index: 999;
   @include media-breakpoint-down(sm) {
     padding: 0.25rem 0;
   }
@@ -164,8 +171,8 @@
   align-items: center;
   width: 100%;
   @include media-breakpoint-down(xxl) {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
   &-nav {
     display: flex;
@@ -384,6 +391,10 @@
   @include media-breakpoint-down(xxl) {
     display: block;
     width: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -24px;
   }
 }
 @media all and (min-width: 992px) {
