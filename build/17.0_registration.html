@@ -169,19 +169,19 @@
 					<nav class="navbar navbar-expand-lg">
 						<div class="header-slider header-slider--mob">
 							<a href="#" class="header__partner">
-								<img src="images/content/198.png" loading="lazy" alt="logo" />
+								<img src="images/content/header-1.png" loading="lazy" alt="logo" />
 							</a>
 							<a href="#" class="header__partner">
 								<img src="images/content/198.png" loading="lazy" alt="logo" />
 							</a>
 							<a href="#" class="header__partner">
-								<img src="images/content/198.png" loading="lazy" alt="logo" />
+								<img src="images/content/header-2.png" loading="lazy" alt="logo" />
 							</a>
 							<a href="#" class="header__partner">
-								<img src="images/content/198.png" loading="lazy" alt="logo" />
+								<img src="images/content/header-3.png" loading="lazy" alt="logo" />
 							</a>
 							<a href="#" class="header__partner">
-								<img src="images/content/198.png" loading="lazy" alt="logo" />
+								<img src="images/content/header-4.png" loading="lazy" alt="logo" />
 							</a>
 						</div>
 						<a class="logo" href="">
@@ -191,19 +191,19 @@
 							<ul class="navbar-nav navbar-nav--left">
 								<div class="header-slider">
 									<a href="#" class="header__partner">
-										<img src="images/content/198.png" loading="lazy" alt="logo" />
+										<img src="images/content/header-1.png" loading="lazy" alt="logo" />
 									</a>
 									<a href="#" class="header__partner">
 										<img src="images/content/198.png" loading="lazy" alt="logo" />
 									</a>
 									<a href="#" class="header__partner">
-										<img src="images/content/198.png" loading="lazy" alt="logo" />
+										<img src="images/content/header-2.png" loading="lazy" alt="logo" />
 									</a>
 									<a href="#" class="header__partner">
-										<img src="images/content/198.png" loading="lazy" alt="logo" />
+										<img src="images/content/header-3.png" loading="lazy" alt="logo" />
 									</a>
 									<a href="#" class="header__partner">
-										<img src="images/content/198.png" loading="lazy" alt="logo" />
+										<img src="images/content/header-4.png" loading="lazy" alt="logo" />
 									</a>
 								</div>
 								<li class="nav-item dropdown">
@@ -303,193 +303,6 @@
 		<main class="main" aria-label="Hlavní obsah">
 			<section class="c-forum-section pt-lg-10 pt-4 mb-10">
 				<div class="container">
-					<!-- <div id="forum_subpage">
-      <script type="text/javascript">
-        function button() {
-          if (
-            document.getElementById("button_register").className == "hidden"
-          ) {
-            document.getElementById("button_register").className = "submit";
-          } else {
-            document.getElementById("button_register").className = "hidden";
-          }
-        }
-        function validate_registrace_forum(formular) {
-          if (formular.nick.value == "") {
-            alert("CHYBA: musíte vyplnit políčko 'Uživatelské jméno'");
-            formular.nick.focus();
-            return false;
-          }
-          if (formular.heslo.value == "") {
-            alert("CHYBA: musíte vyplnit políčko 'Heslo'");
-            formular.heslo.focus();
-            return false;
-          }
-          if (formular.heslo2.value == "") {
-            alert("CHYBA: musíte vyplnit políčko 'potvrdit heslo'");
-            formular.heslo2.focus();
-            return false;
-          }
-          if (formular.heslo.value != formular.heslo2.value) {
-            alert("CHYBA: zadaná hesla se musí shodovat");
-            formular.heslo.focus();
-            return false;
-          }
-          if (formular.email.value == "") {
-            alert("CHYBA: musíte vyplnit políčko 'Email'");
-            formular.email.focus();
-            return false;
-          }
-          if (formular.id_klub.value == "0") {
-            alert("CHYBA: musíte vyplnit políčko 'Klub'");
-            return false;
-          }
-          if (formular.strCAPTCHA.value == "") {
-            alert("CHYBA: musíte vyplnit políčko 'Bezp. kód'");
-            formular.strCAPTCHA.focus();
-            return false;
-          }
-          if (
-            (formular.email.value != "") &
-            (formular.email.value.indexOf("@") < 1 ||
-              formular.email.value.indexOf("@") !=
-                formular.email.value.lastIndexOf("@") ||
-              formular.email.value.lastIndexOf(".") <
-                formular.email.value.lastIndexOf("@") + 2 ||
-              formular.email.value.lastIndexOf(".") >
-                formular.email.value.length - 3 ||
-              formular.email.value.lastIndexOf(".") <
-                formular.email.value.length - 5)
-          ) {
-            alert("CHYBA: nezadal jste 'email' ve správném tvaru");
-            formular.email.focus();
-            return false;
-          }
-        }
-      </script>
-
-      <div class="menicko center">
-        Pokud po registraci neobdržíte potvrzující email, nebo se rozhodnete
-        registraci změnit, použijte prosím<br /><a
-          href="forum_action.asp?action=login_user"
-          class="bold"
-          >EDITACI REGISTROVANÝCH UŽIVATELŮ</a
-        >
-      </div>
-      <form
-        action="forum_action.asp"
-        method="post"
-        onsubmit="return validate_registrace_forum(this)"
-      >
-        <fieldset>
-          <legend>Registrace do diskusního fóra</legend>
-          <div class="space">&nbsp;</div>
-          <div class="space">&nbsp;</div>
-          <table class="nice table" cellspacing="2" cellpadding="2">
-            <tr>
-              <td class="right item">
-                <label for="nick"
-                  ><strong>Uživatelské jméno:&nbsp;*</strong></label
-                >
-              </td>
-              <td>
-                <input type="text" value="1" name="nick" required />
-              </td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="heslo"><strong>Heslo:&nbsp;*</strong></label>
-              </td>
-              <td><input type="password" name="heslo" required /></td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="heslo2"
-                  ><strong>potvrdit heslo:&nbsp;*</strong></label
-                >
-              </td>
-              <td><input type="password" name="heslo2" required /></td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="email"><strong>Email:&nbsp;*</strong></label>
-              </td>
-              <td>
-                <input type="text" value="123@mail.cz" name="email" required />
-              </td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="klub"
-                  ><strong>Preferovaný klub:&nbsp;*</strong></label
-                >
-              </td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="mesto">Mobil:</label>
-              </td>
-              <td>
-                <input type="text" value=" 420333333333" name="mobil" />
-              </td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="jmeno">Jméno:</label>
-              </td>
-              <td><input type="text" value="11" name="jmeno" /></td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="prijmeni">Příjmení:</label>
-              </td>
-              <td><input type="text" value="11" name="prijmeni" /></td>
-            </tr>
-            <tr>
-              <td class="right item">
-                <label for="mesto">Město:</label>
-              </td>
-              <td><input type="text" value="11" name="mesto" /></td>
-            </tr>
-            <tr>
-              <td colspan="2" class="center">
-                <div class="space">&nbsp;</div>
-                <div class="left bold big">
-                  <strong>Registrační podmínky</strong>
-                </div>
-                <div class="space">&nbsp;</div>
-
-               
-                <div class="menicko">
-                  Opište kód z obrázku&nbsp;<input
-                    type="text"
-                    name="strCAPTCHA"
-                    id="strCAPTCHA"
-                    maxlength="10"
-                    class="captcha"
-                  />&nbsp;&nbsp;<img
-                    src="forum_captcha.asp"
-                    alt=""
-                    width="86"
-                    height="21"
-                  />
-                </div>
-                <input
-                  type="submit"
-                  value="Registrovat"
-                  id="button_register"
-                  class="hidden"
-                />
-                <input type="hidden" name="action" value="registration_add" />
-                <div class="space">&nbsp;</div>
-              </td>
-            </tr>
-          </table>
-          <div class="space">&nbsp;</div>
-        </fieldset>
-      </form>
-      <div class="space">&nbsp;</div>
-    </div> -->
 					<div class="row g-8">
 						<div class="col-xl-9">
 							<div class="main-col">
@@ -616,91 +429,36 @@
 								</ul>
 							</div>
 						</div>
-						<aside class="aside col-xl-3">
-							<div class="mb-4">
-								<a class="post" href="/article/7408-Juniori-budou-hrat-nejvyssi-soutez-take-v-pristi-sezone">
-									<div class="post__img">
-										<img src="/image?file=https://hc-olomouc.cz/foto/jun_olomouc_-_mlada_boleslav_/DSC_0349.JPG&w=660&h=530&exact=1&topcut=0&format=jpg" loading="lazy" alt="" />
-									</div>
-									<div class="post__info">
-										<h4 class="h4">
-											Junioři budou hrát nejvyšší soutěž také v příští sezóně
-										</h4>
-										<span class="text-primary">19. 4. 2023</span>
-									</div>
-								</a>
-							</div>
-							<div class="mb-4">
-								<a class="post" href="/article/7407-Pokracuji-v-Olomouci-Jakub-Orsava-a-David-Skurek">
-									<div class="post__img">
-										<img src="/image?file=https://hc-olomouc.cz/foto/skůrekorsava.jpg&w=660&h=530&exact=1&topcut=0&format=jpg" loading="lazy" alt="" />
-									</div>
-									<div class="post__info">
-										<h4 class="h4">
-											Pokračují v Olomouci: Jakub Orsava a David Škůrek
-										</h4>
-										<span class="text-primary">18. 4. 2023</span>
-									</div>
-								</a>
+						<aside class="aside col-xl-3 pt-8">
+							<div class="row">
+								<div class="mb-4 col-xl-12 col-sm-6">
+									<a class="post" href="#">
+										<div class="post__img">
+											<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+										</div>
+										<div class="post__info">
+											<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+											<span class="text-primary">2. 9. 2021</span>
+										</div>
+									</a>
+								</div>
+								<div class="mb-4 col-xl-12 col-sm-6">
+									<a class="post" href="#">
+										<div class="post__img">
+											<img src="https://php.esports.cz/images/min.php?exact&amp;topcut&amp;w=660&amp;h=530&amp;mtime=1666007995&amp;file=https://mountfieldhk.cz/foto_hkr/2022-2023_top_fotky_-_2022-2023/trip_letadlo_anketa.jpg" alt="" />
+										</div>
+										<div class="post__info">
+											<h4 class="h4">Všude dobře, doma nejlépe, pronesl útočník David Krejčí</h4>
+											<span class="text-primary">2. 9. 2021</span>
+										</div>
+									</a>
+								</div>
 							</div>
 						</aside>
 					</div>
 				</div>
 			</section>
 
-			<script async src="/dist/js/forum.js"></script>
-
-			<div class="pub pub--bottom">
-				<div class="container">
-					<div class="row gx-lg-8 gy-4 g-4">
-						<div class="col-xl-3 col-md-6">
-							<a href="http://www.olomouc.eu/" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/7.jpg?1682082036" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="http://www.kr-olomoucky.cz/" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/1.gif?1663789083" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="http://https://www.selm-morava.cz/" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/182.png?1663789081" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="https://www.galeriesantovka.cz" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/189.png?1663789093" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="https://www.rsre.cz" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/200.png?1682082297" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="https://www.mora.cz" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/198.png?1682082049" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="http://www.insta.cz/" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/14.png?1674733160" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="http://tecam.cz/" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/134.png?1674733158" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-						<div class="col-xl-3 col-md-6">
-							<a href="www.vhs-ol.cz" target="_blank">
-								<img src="https://hc-olomouc.cz/ads/db_partners/logos/23.jpg?1674733146" loading="lazy" width="316" alt="" />
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="pub pub--bottom">
 				<div class="container">
 					<div class="row gx-lg-8 gy-4 g-4 align-items-center">

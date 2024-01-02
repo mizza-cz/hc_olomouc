@@ -3,6 +3,8 @@
   a {
     aspect-ratio: 640/150;
     display: block;
+    text-align: center;
+
     img {
       width: 100%;
       height: 100%;
@@ -24,5 +26,11 @@
     height: auto;
     margin-bottom: 40px;
     display: block;
+    text-align: center;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 }

@@ -27,6 +27,10 @@
     margin: 0 auto;
     z-index: 999;
     display: block;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
   &__inner {
     padding-top: 42px;
